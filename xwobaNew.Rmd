@@ -1,0 +1,194 @@
+---
+title: "Untitled"
+author: "Franco C"
+date: "2025-02-02"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readxl)
+history=read_excel("C:\\Users\\franc\\OneDrive\\Hawks25\\NECBLHISTORY_combined.xlsx")
+View(history)
+```
+
+```{r}
+# Define the values to keep
+valid_playresults=c("Single", "Double", "Triple", "HomeRun", 
+"Out", "Error", "FieldersChoice", "Sacrifice")
+
+
+xwoba=subset(history, PlayResult %in% valid_playresults)
+xwoba=subset(xwoba, !is.na(ExitSpeed) & !is.na(Angle) & !is.na(Direction))
+xwoba$PlayResult[xwoba$PlayResult %in% c("FieldersChoice", "Error", "Sacrifice")] <- "Out"
+xwoba$PlayResult = as.factor(xwoba$PlayResult)
+View(xwoba)
+
+```
+
+```{r}
+# Load libraries
+library(xgboost)
+library(caret)
+library(dplyr)
+
+# Step 1: Create a Copy of xwoba for Boosting
+BoostDat <- xwoba
+
+# Step 2: Split the dataset into **Training (70%) and Validation (30%)**
+set.seed(69)  # For reproducibility
+train_index <- createDataPartition(BoostDat$PlayResult, p = 0.7, list = FALSE)
+train_data <- BoostDat[train_index, ]
+validation_data <- BoostDat[-train_index, ]
+
+# Step 3: Convert Categorical Target to Numeric
+class_labels <- c("Out", "Single", "Double", "Triple", "HomeRun")  # Explicit order
+train_data$PlayResult <- factor(train_data$PlayResult, levels = class_labels)
+validation_data$PlayResult <- factor(validation_data$PlayResult, levels = class_labels)
+
+train_labels <- as.numeric(train_data$PlayResult) - 1
+validation_labels <- as.numeric(validation_data$PlayResult) - 1
+
+# Define Feature Set
+selected_features <- c("ExitSpeed", "Angle", "Direction")
+
+# Create XGBoost Matrices
+train_matrix <- xgb.DMatrix(data = as.matrix(train_data[, selected_features]), label = train_labels)
+validation_matrix <- xgb.DMatrix(data = as.matrix(validation_data[, selected_features]), label = validation_labels)
+
+# Step 4: Define Best Practice Hyperparameters
+params <- list(
+  objective = "multi:softprob",  
+  num_class = 5,                 
+  eval_metric = "mlogloss", #prob calibration    
+  eta = 0.15, #controls how much model adjusts weights after each boosting round. Larger values risk overfitting                  
+  max_depth = 7,   #max depth of each tree, larger values learn more complex patterns but risk overfitting               
+  subsample = 0.8,   #% of data used per boosting round, 1.0 will potentially overfit, lower values add randomness and may prevent overfitting             
+  colsample_bytree = 1, #% of features used per tree. Since only 3 feautures 1 is fine           
+  min_child_weight = 3, #how much data needed for further split in tree; higher values make model more conservative and prevents smaller splits.           
+  gamma = 0.2 #min loss reduction for a split. Higher vals prevent unnecessary splits                   
+)
+
+# Step 5: **Stratified 5-Fold Cross-Validation**
+cv_results <- xgb.cv(
+  params = params,
+  data = train_matrix,
+  nrounds = 100,  
+  nfold = 5,      
+  stratified = TRUE,  
+  early_stopping_rounds = 10,  
+  verbose = 0
+)
+
+# Extract the best number of rounds
+best_nrounds <- cv_results$best_iteration
+# Print the best log loss
+cat("Best Log Loss:", min(cv_results$evaluation_log$test_mlogloss_mean), "\n")
+
+# Step 6: Train Final Model
+xgb_model <- xgb.train(
+  params = params,
+  data = train_matrix,
+  nrounds = best_nrounds,  
+  watchlist = list(train = train_matrix, validation = validation_matrix),
+  verbose = 0
+)
+
+# Step 7: Feature Importance
+importance_matrix <- xgb.importance(
+  feature_names = xgb_model$feature_names,  # Extract from the trained model
+  model = xgb_model
+)
+
+print(importance_matrix)
+xgb.plot.importance(importance_matrix)
+
+# Step 8: Predict on Validation Set
+validation_pred <- predict(xgb_model, validation_matrix)
+validation_pred <- matrix(validation_pred, ncol = 5, byrow = TRUE)
+
+# Get Predicted Class Labels
+validation_pred_labels <- max.col(validation_pred) - 1
+
+# Step 9: Compute Confusion Matrix
+library(caret)
+
+# Ensure all factor levels are properly assigned at creation
+predicted_classes <- factor(validation_pred_labels, levels = 0:4, labels = class_labels)
+actual_classes <- factor(validation_labels, levels = 0:4, labels = class_labels)
+
+# Debugging Step: Verify factor levels match
+print(table(predicted_classes))
+print(table(actual_classes))
+
+# Compute the Confusion Matrix
+conf_matrix_caret <- confusionMatrix(predicted_classes, actual_classes)
+
+# Print the full confusion matrix with additional statistics
+print(conf_matrix_caret)
+
+# Step 10: Compute wOBA
+library(dplyr)
+
+# Convert predictions to a data frame
+predicted_probabilities <- as.data.frame(validation_pred)
+colnames(predicted_probabilities) <- class_labels  # Ensure column names match class labels
+
+# Round probabilities for readability
+predicted_probabilities <- predicted_probabilities %>%
+  mutate(across(everything(), ~ round(., 2))) %>%
+  mutate(
+    ExitSpeed = validation_data$ExitSpeed,
+    Angle = validation_data$Angle,
+    Actual = factor(validation_labels, levels = 0:4, labels = class_labels),
+    Predicted = factor(max.col(validation_pred) - 1, levels = 0:4, labels = class_labels)
+  )
+
+# Define MLB wOBA Weights
+woba_weights <- c("Out" = 0, "Single" = 1.29, "Double" = 1.68, "Triple" = 1.95, "HomeRun" = 2.34)
+
+# Compute wOBA & xwOBA for Validation Set
+predicted_probabilities <- predicted_probabilities %>%
+  mutate(
+    # Ensure Actual is a character before matching with woba_weights
+    wOBA = as.numeric(case_when(
+      as.character(Actual) == "Out" ~ woba_weights["Out"],
+      as.character(Actual) == "Single" ~ woba_weights["Single"],
+      as.character(Actual) == "Double" ~ woba_weights["Double"],
+      as.character(Actual) == "Triple" ~ woba_weights["Triple"],
+      as.character(Actual) == "HomeRun" ~ woba_weights["HomeRun"]
+    )),
+    
+    # Compute expected wOBA using predicted probabilities
+    xwOBA = (Out * woba_weights["Out"]) +
+            (Single * woba_weights["Single"]) +
+            (Double * woba_weights["Double"]) +
+            (Triple * woba_weights["Triple"]) +
+            (HomeRun * woba_weights["HomeRun"])
+  )
+
+# Debugging: Check for NA values in wOBA
+print(table(predicted_probabilities$wOBA, useNA = "ifany"))
+
+# Compute Average Actual & Expected wOBA
+actual_woba <- mean(predicted_probabilities$wOBA, na.rm = TRUE)
+expected_woba <- mean(predicted_probabilities$xwOBA, na.rm = TRUE)
+
+# Print results
+cat("Average Actual wOBA:", actual_woba, "\n")
+cat("Average Expected wOBA (xwOBA):", expected_woba, "\n")
+
+
+```
+```{r}
+brier_score <- mean((validation_pred - model.matrix(~ Actual - 1, data = predicted_probabilities))^2)
+cat("Brier Score:", brier_score, "\n")
+log_loss <- -mean(log(validation_pred[cbind(1:nrow(validation_pred), validation_labels + 1)]))
+cat("Log Loss:", log_loss, "\n")
+
+```
+
+
