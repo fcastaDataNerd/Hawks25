@@ -1,0 +1,170 @@
+Name,Position,School,AB,PA,H,HR,AVG,OBP,SLG,OPS,NECBL_TEAM
+Nick Quagliato,C,Fairleigh Dickinson,0,0,0,0,0,0,0,0,NightHawks
+Jack Arcamone,C,Richmond,0,0,0,0,0,0,0,0,NightHawks
+Braize Mitchell,C,Iona,0,0,0,0,0,0,0,0,NightHawks
+Cam Boardman,C,Hartford,0,0,0,0,0,0,0,0,NightHawks
+Ryan Preisano,1B/3B,Wake Forest,0,0,0,0,0,0,0,0,NightHawks
+Anthony Greco,1B/OF,William & Mary,0,0,0,0,0,0,0,0,NightHawks
+Jack Spanier,MIF,Minnesota,0,0,0,0,0,0,0,0,NightHawks
+Trey Christman,MIF,William & Mary,0,0,0,0,0,0,0,0,NightHawks
+Nick Mazzotta,MIF/P,Wagner,0,0,0,0,0,0,0,0,NightHawks
+Aidan O'Keefe,3B,Richmond,0,0,0,0,0,0,0,0,NightHawks
+Cooper Blauser,3B,Jacksonville State,0,0,0,0,0,0,0,0,NightHawks
+Drew Berkland,OF,Minnesota,0,0,0,0,0,0,0,0,NightHawks
+Cole Fellows,OF,Columbia,0,0,0,0,0,0,0,0,NightHawks
+Kyle Neri,OF,Rider,0,0,0,0,0,0,0,0,NightHawks
+Joey Dwyer,OF,SUNY Oneonta,0,0,0,0,0,0,0,0,NightHawks
+AJ Brotz,UTIL,Marist,0,0,0,0,0,0,0,0,NightHawks
+Michael Trommer,UTIL,Bucknell,0,0,0,0,0,0,0,0,NightHawks
+Player_1,DEMO,DEMO,0,0,0,0,0,0,0,0,Bristol Blues
+Player_2,DEMO,DEMO,0,0,0,0,0,0,0,0,Danbury Westerners
+Player_3,DEMO,DEMO,0,0,0,0,0,0,0,0,Keene Swamp Bats
+Player_4,DEMO,DEMO,0,0,0,0,0,0,0,0,Martha's Vineyard Sharks
+Player_5,DEMO,DEMO,0,0,0,0,0,0,0,0,Mystic Schooners
+Player_6,DEMO,DEMO,0,0,0,0,0,0,0,0,Newport Gulls
+Player_7,DEMO,DEMO,0,0,0,0,0,0,0,0,North Adams SteepleCats
+Player_8,DEMO,DEMO,0,0,0,0,0,0,0,0,North Shore Navigators
+Player_9,DEMO,DEMO,0,0,0,0,0,0,0,0,Ocean State Waves
+Player_10,DEMO,DEMO,0,0,0,0,0,0,0,0,Sanford Mainers
+Player_11,DEMO,DEMO,0,0,0,0,0,0,0,0,Valley Blue Sox
+Player_12,DEMO,DEMO,0,0,0,0,0,0,0,0,Vermont Mountaineers
+Player_13,DEMO,DEMO,0,0,0,0,0,0,0,0,Bristol Blues
+Player_14,DEMO,DEMO,0,0,0,0,0,0,0,0,Danbury Westerners
+Player_15,DEMO,DEMO,0,0,0,0,0,0,0,0,Keene Swamp Bats
+Player_16,DEMO,DEMO,0,0,0,0,0,0,0,0,Martha's Vineyard Sharks
+Player_17,DEMO,DEMO,0,0,0,0,0,0,0,0,Mystic Schooners
+Player_18,DEMO,DEMO,0,0,0,0,0,0,0,0,Newport Gulls
+Player_19,DEMO,DEMO,0,0,0,0,0,0,0,0,North Adams SteepleCats
+Player_20,DEMO,DEMO,0,0,0,0,0,0,0,0,North Shore Navigators
+Player_21,DEMO,DEMO,0,0,0,0,0,0,0,0,Ocean State Waves
+Player_22,DEMO,DEMO,0,0,0,0,0,0,0,0,Sanford Mainers
+Player_23,DEMO,DEMO,0,0,0,0,0,0,0,0,Valley Blue Sox
+Player_24,DEMO,DEMO,0,0,0,0,0,0,0,0,Bristol Blues
+Player_25,DEMO,DEMO,0,0,0,0,0,0,0,0,Danbury Westerners
+Player_26,DEMO,DEMO,0,0,0,0,0,0,0,0,Keene Swamp Bats
+Player_27,DEMO,DEMO,0,0,0,0,0,0,0,0,Martha's Vineyard Sharks
+Player_28,DEMO,DEMO,0,0,0,0,0,0,0,0,Mystic Schooners
+Player_29,DEMO,DEMO,0,0,0,0,0,0,0,0,Newport Gulls
+Player_30,DEMO,DEMO,0,0,0,0,0,0,0,0,North Adams SteepleCats
+Player_31,DEMO,DEMO,0,0,0,0,0,0,0,0,North Shore Navigators
+Player_32,DEMO,DEMO,0,0,0,0,0,0,0,0,Ocean State Waves
+Player_33,DEMO,DEMO,0,0,0,0,0,0,0,0,Sanford Mainers
+Player_34,DEMO,DEMO,0,0,0,0,0,0,0,0,Valley Blue Sox
+Player_35,DEMO,DEMO,0,0,0,0,0,0,0,0,Vermont Mountaineers
+Player_36,DEMO,DEMO,0,0,0,0,0,0,0,0,Bristol Blues
+Player_37,DEMO,DEMO,0,0,0,0,0,0,0,0,Danbury Westerners
+Player_38,DEMO,DEMO,0,0,0,0,0,0,0,0,Keene Swamp Bats
+Player_39,DEMO,DEMO,0,0,0,0,0,0,0,0,Martha's Vineyard Sharks
+Player_40,DEMO,DEMO,0,0,0,0,0,0,0,0,Mystic Schooners
+Player_41,DEMO,DEMO,0,0,0,0,0,0,0,0,Newport Gulls
+Player_42,DEMO,DEMO,0,0,0,0,0,0,0,0,North Adams SteepleCats
+Player_43,DEMO,DEMO,0,0,0,0,0,0,0,0,North Shore Navigators
+Player_44,DEMO,DEMO,0,0,0,0,0,0,0,0,Bristol Blues
+Player_45,DEMO,DEMO,0,0,0,0,0,0,0,0,Danbury Westerners
+Player_46,DEMO,DEMO,0,0,0,0,0,0,0,0,Keene Swamp Bats
+Player_47,DEMO,DEMO,0,0,0,0,0,0,0,0,Martha's Vineyard Sharks
+Player_48,DEMO,DEMO,0,0,0,0,0,0,0,0,Mystic Schooners
+Player_49,DEMO,DEMO,0,0,0,0,0,0,0,0,Newport Gulls
+Player_50,DEMO,DEMO,0,0,0,0,0,0,0,0,North Adams SteepleCats
+Player_51,DEMO,DEMO,0,0,0,0,0,0,0,0,North Shore Navigators
+Player_52,DEMO,DEMO,0,0,0,0,0,0,0,0,Ocean State Waves
+Player_53,DEMO,DEMO,0,0,0,0,0,0,0,0,Sanford Mainers
+Player_54,DEMO,DEMO,0,0,0,0,0,0,0,0,Valley Blue Sox
+Player_55,DEMO,DEMO,0,0,0,0,0,0,0,0,Vermont Mountaineers
+Player_56,DEMO,DEMO,0,0,0,0,0,0,0,0,Bristol Blues
+Player_57,DEMO,DEMO,0,0,0,0,0,0,0,0,Danbury Westerners
+Player_58,DEMO,DEMO,0,0,0,0,0,0,0,0,Keene Swamp Bats
+Player_59,DEMO,DEMO,0,0,0,0,0,0,0,0,Martha's Vineyard Sharks
+Player_60,DEMO,DEMO,0,0,0,0,0,0,0,0,Mystic Schooners
+Player_61,DEMO,DEMO,0,0,0,0,0,0,0,0,Newport Gulls
+Player_62,DEMO,DEMO,0,0,0,0,0,0,0,0,North Adams SteepleCats
+Player_63,DEMO,DEMO,0,0,0,0,0,0,0,0,North Shore Navigators
+Player_64,DEMO,DEMO,0,0,0,0,0,0,0,0,Ocean State Waves
+Player_65,DEMO,DEMO,0,0,0,0,0,0,0,0,Sanford Mainers
+Player_66,DEMO,DEMO,0,0,0,0,0,0,0,0,Valley Blue Sox
+Player_67,DEMO,DEMO,0,0,0,0,0,0,0,0,Bristol Blues
+Player_68,DEMO,DEMO,0,0,0,0,0,0,0,0,Danbury Westerners
+Player_69,DEMO,DEMO,0,0,0,0,0,0,0,0,Keene Swamp Bats
+Player_70,DEMO,DEMO,0,0,0,0,0,0,0,0,Martha's Vineyard Sharks
+Player_71,DEMO,DEMO,0,0,0,0,0,0,0,0,Mystic Schooners
+Player_72,DEMO,DEMO,0,0,0,0,0,0,0,0,Newport Gulls
+Player_73,DEMO,DEMO,0,0,0,0,0,0,0,0,North Adams SteepleCats
+Player_74,DEMO,DEMO,0,0,0,0,0,0,0,0,North Shore Navigators
+Player_75,DEMO,DEMO,0,0,0,0,0,0,0,0,Ocean State Waves
+Player_76,DEMO,DEMO,0,0,0,0,0,0,0,0,Sanford Mainers
+Player_77,DEMO,DEMO,0,0,0,0,0,0,0,0,Valley Blue Sox
+Player_78,DEMO,DEMO,0,0,0,0,0,0,0,0,Vermont Mountaineers
+Player_79,DEMO,DEMO,0,0,0,0,0,0,0,0,Bristol Blues
+Player_80,DEMO,DEMO,0,0,0,0,0,0,0,0,Danbury Westerners
+Player_81,DEMO,DEMO,0,0,0,0,0,0,0,0,Keene Swamp Bats
+Player_82,DEMO,DEMO,0,0,0,0,0,0,0,0,Martha's Vineyard Sharks
+Player_83,DEMO,DEMO,0,0,0,0,0,0,0,0,Mystic Schooners
+Player_84,DEMO,DEMO,0,0,0,0,0,0,0,0,Newport Gulls
+Player_85,DEMO,DEMO,0,0,0,0,0,0,0,0,North Adams SteepleCats
+Player_86,DEMO,DEMO,0,0,0,0,0,0,0,0,North Shore Navigators
+Player_87,DEMO,DEMO,0,0,0,0,0,0,0,0,Bristol Blues
+Player_88,DEMO,DEMO,0,0,0,0,0,0,0,0,Danbury Westerners
+Player_89,DEMO,DEMO,0,0,0,0,0,0,0,0,Keene Swamp Bats
+Player_90,DEMO,DEMO,0,0,0,0,0,0,0,0,Martha's Vineyard Sharks
+Player_91,DEMO,DEMO,0,0,0,0,0,0,0,0,Mystic Schooners
+Player_92,DEMO,DEMO,0,0,0,0,0,0,0,0,Newport Gulls
+Player_93,DEMO,DEMO,0,0,0,0,0,0,0,0,North Adams SteepleCats
+Player_94,DEMO,DEMO,0,0,0,0,0,0,0,0,North Shore Navigators
+Player_95,DEMO,DEMO,0,0,0,0,0,0,0,0,Ocean State Waves
+Player_96,DEMO,DEMO,0,0,0,0,0,0,0,0,Sanford Mainers
+Player_97,DEMO,DEMO,0,0,0,0,0,0,0,0,Valley Blue Sox
+Player_98,DEMO,DEMO,0,0,0,0,0,0,0,0,Vermont Mountaineers
+Player_99,DEMO,DEMO,0,0,0,0,0,0,0,0,Bristol Blues
+Player_100,DEMO,DEMO,0,0,0,0,0,0,0,0,Danbury Westerners
+Player_101,DEMO,DEMO,0,0,0,0,0,0,0,0,Keene Swamp Bats
+Player_102,DEMO,DEMO,0,0,0,0,0,0,0,0,Martha's Vineyard Sharks
+Player_103,DEMO,DEMO,0,0,0,0,0,0,0,0,Mystic Schooners
+Player_104,DEMO,DEMO,0,0,0,0,0,0,0,0,Newport Gulls
+Player_105,DEMO,DEMO,0,0,0,0,0,0,0,0,North Adams SteepleCats
+Player_106,DEMO,DEMO,0,0,0,0,0,0,0,0,North Shore Navigators
+Player_107,DEMO,DEMO,0,0,0,0,0,0,0,0,Ocean State Waves
+Player_108,DEMO,DEMO,0,0,0,0,0,0,0,0,Sanford Mainers
+Player_109,DEMO,DEMO,0,0,0,0,0,0,0,0,Valley Blue Sox
+Player_110,DEMO,DEMO,0,0,0,0,0,0,0,0,Bristol Blues
+Player_111,DEMO,DEMO,0,0,0,0,0,0,0,0,Danbury Westerners
+Player_112,DEMO,DEMO,0,0,0,0,0,0,0,0,Keene Swamp Bats
+Player_113,DEMO,DEMO,0,0,0,0,0,0,0,0,Martha's Vineyard Sharks
+Player_114,DEMO,DEMO,0,0,0,0,0,0,0,0,Mystic Schooners
+Player_115,DEMO,DEMO,0,0,0,0,0,0,0,0,Newport Gulls
+Player_116,DEMO,DEMO,0,0,0,0,0,0,0,0,North Adams SteepleCats
+Player_117,DEMO,DEMO,0,0,0,0,0,0,0,0,North Shore Navigators
+Player_118,DEMO,DEMO,0,0,0,0,0,0,0,0,Ocean State Waves
+Player_119,DEMO,DEMO,0,0,0,0,0,0,0,0,Sanford Mainers
+Player_120,DEMO,DEMO,0,0,0,0,0,0,0,0,Valley Blue Sox
+Player_121,DEMO,DEMO,0,0,0,0,0,0,0,0,Vermont Mountaineers
+Player_122,DEMO,DEMO,0,0,0,0,0,0,0,0,Bristol Blues
+Player_123,DEMO,DEMO,0,0,0,0,0,0,0,0,Danbury Westerners
+Player_124,DEMO,DEMO,0,0,0,0,0,0,0,0,Keene Swamp Bats
+Player_125,DEMO,DEMO,0,0,0,0,0,0,0,0,Martha's Vineyard Sharks
+Player_126,DEMO,DEMO,0,0,0,0,0,0,0,0,Mystic Schooners
+Player_127,DEMO,DEMO,0,0,0,0,0,0,0,0,Newport Gulls
+Player_128,DEMO,DEMO,0,0,0,0,0,0,0,0,North Adams SteepleCats
+Player_129,DEMO,DEMO,0,0,0,0,0,0,0,0,North Shore Navigators
+Player_130,DEMO,DEMO,0,0,0,0,0,0,0,0,Bristol Blues
+Player_131,DEMO,DEMO,0,0,0,0,0,0,0,0,Danbury Westerners
+Player_132,DEMO,DEMO,0,0,0,0,0,0,0,0,Keene Swamp Bats
+Player_133,DEMO,DEMO,0,0,0,0,0,0,0,0,Martha's Vineyard Sharks
+Player_134,DEMO,DEMO,0,0,0,0,0,0,0,0,Mystic Schooners
+Player_135,DEMO,DEMO,0,0,0,0,0,0,0,0,Newport Gulls
+Player_136,DEMO,DEMO,0,0,0,0,0,0,0,0,North Adams SteepleCats
+Player_137,DEMO,DEMO,0,0,0,0,0,0,0,0,North Shore Navigators
+Player_138,DEMO,DEMO,0,0,0,0,0,0,0,0,Ocean State Waves
+Player_139,DEMO,DEMO,0,0,0,0,0,0,0,0,Sanford Mainers
+Player_140,DEMO,DEMO,0,0,0,0,0,0,0,0,Valley Blue Sox
+Player_141,DEMO,DEMO,0,0,0,0,0,0,0,0,Vermont Mountaineers
+Player_142,DEMO,DEMO,0,0,0,0,0,0,0,0,Bristol Blues
+Player_143,DEMO,DEMO,0,0,0,0,0,0,0,0,Danbury Westerners
+Player_144,DEMO,DEMO,0,0,0,0,0,0,0,0,Keene Swamp Bats
+Player_145,DEMO,DEMO,0,0,0,0,0,0,0,0,Martha's Vineyard Sharks
+Player_146,DEMO,DEMO,0,0,0,0,0,0,0,0,Mystic Schooners
+Player_147,DEMO,DEMO,0,0,0,0,0,0,0,0,Newport Gulls
+Player_148,DEMO,DEMO,0,0,0,0,0,0,0,0,North Adams SteepleCats
+Player_149,DEMO,DEMO,0,0,0,0,0,0,0,0,North Shore Navigators
+Player_150,DEMO,DEMO,0,0,0,0,0,0,0,0,Ocean State Waves
+Player_151,DEMO,DEMO,0,0,0,0,0,0,0,0,Sanford Mainers
+Player_152,DEMO,DEMO,0,0,0,0,0,0,0,0,Valley Blue Sox
