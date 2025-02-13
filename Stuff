@@ -1,0 +1,135 @@
+---
+title: "Stuff"
+author: "Franco C"
+date: "2025-02-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readxl)
+hist=read_excel("C:\\Users\\franc\\OneDrive\\Hawks25\\NECBLHISTORY_combined.xlsx")
+View(hist)
+```
+
+
+
+```{r}
+library(dplyr)
+library(caret)
+
+
+hist <- hist %>%
+  filter(!is.na(AutoPitchType), 
+         AutoPitchType != "Other", 
+         PitchCall != "Undefined", 
+         PitchCall != "BallIntentional", 
+         PitcherThrows != "Both", 
+         BatterSide != "Undefined",
+         !is.na(SpinRate))
+
+
+hist <- hist %>%
+  mutate(
+    PitchCall = recode(PitchCall, 
+      "StikeCalled" = "StrikeCalled",
+      "Strikecalled" = "StrikeCalled",
+      "BallinDirt" = "BallCalled",
+      "FoulBallNotFieldable" = "Foul",
+      "FoulBall" = "Foul",
+      "FoulBallFieldable" = "Foul"
+    ),
+    BatterSide = recode(BatterSide, "RIght" = "Right"),
+    Balls = factor(Balls, levels = c(0,1,2,3), ordered = TRUE),
+    Strikes = factor(Strikes, levels = c(0,1,2), ordered = TRUE),
+    PitchCall=factor(PitchCall)
+  )
+summary(hist)
+```
+
+
+```{r}
+library(caret)
+set.seed(2425)  
+
+
+train_index <- createDataPartition(hist$PitchCall, p = 0.7, list = FALSE)
+train <- hist[train_index, ]
+vali <- hist[-train_index, ]
+```
+
+```{r}
+set.seed(2425)
+library(randomForest)
+
+rf_model <- randomForest(
+  PitchCall ~ PitcherThrows+BatterSide+Balls+Strikes+AutoPitchType+RelSpeed+SpinRate+InducedVertBreak+HorzBreak+PlateLocHeight+PlateLocSide,
+  data = train,  
+  ntree = 100,  
+  mtry = sqrt(11),
+  importance = TRUE,
+)
+
+print(rf_model)
+```
+```{r}
+# Variable Importance
+varImpPlot(rf_model, main = "Feature Importance in Random Forest")
+library(caret)
+
+# Make predictions
+rf_pred <- predict(rf_model, newdata = vali)
+
+# Compute Confusion Matrix
+conf_matrix <- confusionMatrix(rf_pred, vali$PitchCall)
+print(conf_matrix)
+```
+```{r}
+rf_prob <- predict(rf_model, newdata = vali, type = "prob")
+
+y_actual <- model.matrix(~ PitchCall - 1, data = vali)
+
+brier_score <- mean(rowSums((rf_prob - y_actual)^2) / ncol(y_actual))
+cat("Brier Score:", brier_score, "\n")
+```
+
+```{r}
+log_loss <- function(y_true, y_pred) {
+  eps <- 1e-15  
+  y_pred <- pmax(pmin(y_pred, 1 - eps), eps)  # Clip probabilities to avoid log(0)
+  -mean(rowSums(y_true * log(y_pred)))
+}
+
+y_true <- model.matrix(~ PitchCall - 1, data = vali)
+
+log_loss_score <- log_loss(y_true, rf_prob)
+cat("Log Loss:", log_loss_score, "\n")
+
+num_classes <- length(unique(vali$PitchCall))
+baseline_probs <- matrix(1 / num_classes, nrow = nrow(y_true), ncol = num_classes)
+
+baseline_log_loss <- -mean(rowSums(y_true * log(baseline_probs + 1e-15)))
+cat("Baseline Log Loss:", baseline_log_loss, "\n")
+improvement <- ((1.8 - 1.14) / 1.8) * 100
+cat("Log Loss Improvement:", improvement, "%\n")
+
+```
+
+
+```{r}
+preds <- as.data.frame(rf_prob)
+
+preds$Actual <- vali$PitchCall
+preds$Predicted <- predict(rf_model, newdata = vali)
+preds$Strike=preds$StrikeCalled+preds$StrikeSwinging
+preds <- cbind(preds, vali[, c("PitcherThrows", "BatterSide", "Balls", "Strikes", "AutoPitchType", "RelSpeed", "SpinRate", "InducedVertBreak", "HorzBreak", "PlateLocHeight", "PlateLocSide")])
+
+View(preds)
+```
+
+
+
+
