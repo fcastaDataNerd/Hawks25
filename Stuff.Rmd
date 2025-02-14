@@ -152,5 +152,6 @@ fastball_grid <- expand.grid(
 
 
 str(fastball_grid)
-
+fastball_predictions <- predict(rf_model, newdata = fastball_grid, type = "prob")
 ```
+
