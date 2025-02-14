@@ -18,6 +18,7 @@ View(hist)
 
 
 ```{r}
+# Load necessary libraries
 library(dplyr)
 library(caret)
 
@@ -43,11 +44,13 @@ hist <- hist %>%
       "FoulBallFieldable" = "Foul"
     ),
     BatterSide = recode(BatterSide, "RIght" = "Right"),
+    PitcherThrows=recode(PitcherThrows, "RIght" = "Right"),
     Balls = factor(Balls, levels = c(0,1,2,3), ordered = TRUE),
     Strikes = factor(Strikes, levels = c(0,1,2), ordered = TRUE),
-    PitchCall=factor(PitchCall)
+    PitchCall=factor(PitchCall),
+    PitcherThrows=factor(PitcherThrows, levels=c("Left", "Right")),
+    BatterSide=factor(BatterSide, levels=c("Left", "Right"))
   )
-summary(hist)
 ```
 
 
@@ -59,6 +62,7 @@ set.seed(2425)
 train_index <- createDataPartition(hist$PitchCall, p = 0.7, list = FALSE)
 train <- hist[train_index, ]
 vali <- hist[-train_index, ]
+
 ```
 
 ```{r}
@@ -74,18 +78,18 @@ rf_model <- randomForest(
 )
 
 print(rf_model)
+str(rf_model$forest$xlevels)
 ```
 ```{r}
-# Variable Importance
 varImpPlot(rf_model, main = "Feature Importance in Random Forest")
-library(caret)
 
-# Make predictions
 rf_pred <- predict(rf_model, newdata = vali)
 
 # Compute Confusion Matrix
 conf_matrix <- confusionMatrix(rf_pred, vali$PitchCall)
 print(conf_matrix)
+
+
 ```
 ```{r}
 rf_prob <- predict(rf_model, newdata = vali, type = "prob")
@@ -94,12 +98,11 @@ y_actual <- model.matrix(~ PitchCall - 1, data = vali)
 
 brier_score <- mean(rowSums((rf_prob - y_actual)^2) / ncol(y_actual))
 cat("Brier Score:", brier_score, "\n")
-```
 
-```{r}
+
 log_loss <- function(y_true, y_pred) {
   eps <- 1e-15  
-  y_pred <- pmax(pmin(y_pred, 1 - eps), eps)  # Clip probabilities to avoid log(0)
+  y_pred <- pmax(pmin(y_pred, 1 - eps), eps)  
   -mean(rowSums(y_true * log(y_pred)))
 }
 
@@ -115,7 +118,6 @@ baseline_log_loss <- -mean(rowSums(y_true * log(baseline_probs + 1e-15)))
 cat("Baseline Log Loss:", baseline_log_loss, "\n")
 improvement <- ((1.8 - 1.14) / 1.8) * 100
 cat("Log Loss Improvement:", improvement, "%\n")
-
 ```
 
 
@@ -131,5 +133,24 @@ View(preds)
 ```
 
 
+```{r}
+fastball_grid <- expand.grid(
+  PitcherThrows = factor(c("Right", "Left"), levels = levels(train$PitcherThrows)),
+  BatterSide = factor(c("Right", "Left"), levels = levels(train$BatterSide)),
+  Balls = factor(c(0, 1, 2, 3), levels = levels(train$Balls), ordered = TRUE),
+  Strikes = factor(c(0, 1, 2), levels = levels(train$Strikes), ordered = TRUE),
+  AutoPitchType = factor("Four-Seam", levels = levels(train$AutoPitchType)),
+  RelSpeed = seq(min(train$RelSpeed), max(train$RelSpeed), by = 10),  
+  SpinRate = seq(min(train$SpinRate), max(train$SpinRate), by = 400),  
+  InducedVertBreak = seq(min(train$InducedVertBreak), max(train$InducedVertBreak), by = 10),  
+  HorzBreak = seq(min(train$HorzBreak), max(train$HorzBreak), by = 10),  
+  PlateLocHeight = seq(min(train$PlateLocHeight), max(train$PlateLocHeight), by = 2),  
+  PlateLocSide = seq(min(train$PlateLocSide), max(train$PlateLocSide), by = 2),
+  stringsAsFactors = FALSE  # Prevent auto conversion to factors
+)
 
 
+
+str(fastball_grid)
+
+```
