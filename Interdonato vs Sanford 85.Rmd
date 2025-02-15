@@ -1,0 +1,157 @@
+---
+title: 'Reed Interdonato vs Sanford 8/5'
+output: 
+  html_document: 
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(readxl)
+library(dplyr)
+library(ggplot2)
+library(knitr)
+
+# Load the data
+data <- read_excel("C:\\Users\\Franco Castagliuolo\\OneDrive - Bentley University\\Sanford85.xlsx")
+```
+
+
+```{r}
+# Filter the data for the pitcher Reed Interdonato
+Brian_Foley_data <- data %>%
+  filter(Pitcher == "Interdonato, Reed")
+
+# Create a detailed table for each pitch
+detailed_pitch_table <- Brian_Foley_data %>%
+  select(AutoPitchType, RelSpeed, SpinRate, SpinAxis, HorzBreak, InducedVertBreak, PitchCall, RelHeight, RelSide, Extension) %>%
+  rename(
+    ReleaseSpeed = RelSpeed,
+    Tilt = SpinAxis,
+    HorizontalBreak = HorzBreak,
+    InducedVerticalBreak = InducedVertBreak,
+    ReleaseHeight = RelHeight,
+    ReleaseSide = RelSide
+  ) %>%
+  mutate(
+    ReleaseSpeed = round(ReleaseSpeed, 2),
+    SpinRate = round(SpinRate, 2),
+    Tilt = round(Tilt, 2),
+    HorizontalBreak = round(HorizontalBreak, 2),
+    InducedVerticalBreak = round(InducedVerticalBreak, 2),
+    ReleaseHeight = round(ReleaseHeight, 2),
+    ReleaseSide = round(ReleaseSide, 2),
+    Extension = round(Extension, 2),
+    ClockTilt = round((Tilt / 30) %% 12, 1) # Interpret Tilt as clock face
+  )
+
+# Display the detailed table
+knitr::kable(detailed_pitch_table, caption = "Detailed Pitch Table for Reed Interdonato")
+
+# Calculate the total number of pitches
+total_pitches <- nrow(detailed_pitch_table)
+
+# Create a summary table
+pitch_summary <- detailed_pitch_table %>%
+  group_by(AutoPitchType) %>%
+  summarise(
+    TotalPitches = n(),
+    Usage = sprintf("%.2f%%", n() / total_pitches * 100),
+    Balls = sum(PitchCall %in% c("BallCalled", "BallinDirt")),
+    Strikes = sum(!PitchCall %in% c("BallCalled", "BallinDirt")), # Count everything not a ball as a strike
+    BallPercentage = sprintf('%.2f%%', Balls / TotalPitches * 100),
+    StrikePercentage = sprintf('%.2f%%', Strikes / TotalPitches * 100),
+    AvgVelocity = round(mean(ReleaseSpeed, na.rm = TRUE), 2),
+    AvgSpinRate = round(mean(SpinRate, na.rm = TRUE), 2),
+    AvgInducedVertBreak = round(mean(InducedVerticalBreak, na.rm = TRUE), 2),
+    AvgHorzBreak = round(mean(HorizontalBreak, na.rm = TRUE), 2),
+    AvgTilt = round(mean(Tilt, na.rm = TRUE), 2),
+    AvgClockTilt = round(mean(ClockTilt, na.rm = TRUE), 1), # Clock face interpretation
+    AvgReleaseHeight = round(mean(ReleaseHeight, na.rm = TRUE), 2),
+    AvgReleaseSide = round(mean(ReleaseSide, na.rm = TRUE), 2),
+    AvgExtension = round(mean(Extension, na.rm = TRUE), 2)
+  ) %>%
+  select(AutoPitchType, Usage, everything())
+
+# Display the total number of pitches
+cat("Total number of pitches thrown: ", total_pitches, "\n")
+
+# Display the summary table
+knitr::kable(pitch_summary, caption = "Summary Pitch Table for Reed Interdonato")
+
+# Calculate maximum fastball velocity
+max_fb_velocity <- detailed_pitch_table %>%
+  filter(AutoPitchType %in% c("Four-Seam", "Sinker", "Cutter")) %>%
+  summarise(MaxFBVelocity = max(ReleaseSpeed, na.rm = TRUE)) %>%
+  pull(MaxFBVelocity)
+
+# Display the maximum fastball velocity
+cat("Reed Interdonato maximum FB velocity: ", max_fb_velocity, "mph\n")
+
+# Prepare data for plotting pitch locations
+pitch_location_data <- Brian_Foley_data %>%
+  select(AutoPitchType, PlateLocHeight, PlateLocSide, PitchCall) %>%
+  rename(
+    PitchHeight = PlateLocHeight,
+    PitchSide = PlateLocSide
+  ) %>%
+  mutate(
+    SwingTake = ifelse(PitchCall %in% c("StrikeSwinging", "FoulBall", "FoulBallFieldable", "FoulBallNotFieldable", "InPlay"), "Swing", "Take"),
+    Chase = ifelse(SwingTake == "Swing" & (PitchSide < -0.85 | PitchSide > 0.85 | PitchHeight < 1.5 | PitchHeight > 3.5), "Chase", "Non-Chase")
+  )
+
+# Create the scatter plot with specified strike zone boxes
+ggplot(pitch_location_data, aes(x = PitchSide, y = PitchHeight, color = SwingTake, shape = Chase)) +
+  geom_point(size = 3) +
+  geom_rect(aes(xmin = -0.5, xmax = 0.5, ymin = 1.75, ymax = 3.25), fill = NA, color = "red", linetype = "solid", size = 1) + 
+  geom_rect(aes(xmin = -0.85, xmax = 0.85, ymin = 1.5, ymax = 3.5), fill = NA, color = "black", linetype = "solid", size = 1) + 
+  geom_rect(aes(xmin = -1.25, xmax = 1.25, ymin = 1.25, ymax = 3.75), fill = NA, color = "gray", linetype = "solid", size = 1) +
+  scale_x_continuous(limits = c(-2, 2)) +
+  scale_y_continuous(limits = c(0, 5)) +
+  coord_fixed(ratio = 1) +
+  labs(title = "Pitch Locations for Reed Interdonato",
+       x = "Horizontal Location (feet)",
+       y = "Vertical Location (feet)",
+       color = "Swing/Take",
+       shape = "Chase") +
+  facet_wrap(~ AutoPitchType) +
+  theme_minimal() +
+  theme(
+    legend.position = "right",
+    panel.grid.major = element_line(color = "grey80"),
+    panel.grid.minor = element_line(color = "grey90"),
+    axis.text = element_text(color = "black"),
+    axis.title = element_text(color = "black"),
+    plot.title = element_text(color = "black"),
+    legend.background = element_rect(fill = "white", color = NA),
+    legend.key = element_rect(fill = "white", color = NA),
+    legend.text = element_text(color = "black"),
+    legend.title = element_text(color = "black")
+  )
+
+# Create the scatter plot for horizontal and vertical breaks
+ggplot(detailed_pitch_table, aes(x = HorizontalBreak, y = InducedVerticalBreak, color = AutoPitchType)) +
+  geom_point(size = 3) + # Increase point size
+  scale_x_continuous(limits = c(-25, 25)) +  # Set horizontal limits to +/- 25 inches
+  scale_y_continuous(limits = c(-25, 25)) +  # Set vertical limits to +/- 25 inches
+  labs(title = paste("Pitch Movement"), 
+       x = "Horizontal Break (inches)",
+       y = "Induced Vertical Break (inches)",
+       color = "Pitch Type") +
+  theme_minimal() +
+  theme(
+    legend.position = "right",
+    panel.grid.major = element_line(color = "grey80"),
+    panel.grid.minor = element_line(color = "grey90"),
+    axis.text = element_text(color = "black"),
+    axis.title = element_text(color = "black"),
+    plot.title = element_text(color = "black"),
+    legend.background = element_rect(fill = "white", color = NA),
+    legend.key = element_rect(fill = "white", color = NA),
+    legend.text = element_text(color = "black"),
+    legend.title = element_text(color = "black")
+  )
+
+```
+
+
