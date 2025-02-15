@@ -70,15 +70,14 @@ set.seed(2425)
 library(randomForest)
 
 rf_model <- randomForest(
-  PitchCall ~ PitcherThrows+BatterSide+Balls+Strikes+AutoPitchType+RelSpeed+SpinRate+InducedVertBreak+HorzBreak+PlateLocHeight+PlateLocSide,
+  PitchCall ~ PitcherThrows+BatterSide+Balls+Strikes+RelSpeed+SpinRate+InducedVertBreak+HorzBreak+PlateLocHeight+PlateLocSide,
   data = train,  
   ntree = 100,  
-  mtry = sqrt(11),
+  mtry = sqrt(10),
   importance = TRUE,
 )
 
 print(rf_model)
-str(rf_model$forest$xlevels)
 ```
 ```{r}
 varImpPlot(rf_model, main = "Feature Importance in Random Forest")
@@ -133,25 +132,26 @@ View(preds)
 ```
 
 
+
 ```{r}
-fastball_grid <- expand.grid(
-  PitcherThrows = factor(c("Right", "Left"), levels = levels(train$PitcherThrows)),
-  BatterSide = factor(c("Right", "Left"), levels = levels(train$BatterSide)),
-  Balls = factor(c(0, 1, 2, 3), levels = levels(train$Balls), ordered = TRUE),
-  Strikes = factor(c(0, 1, 2), levels = levels(train$Strikes), ordered = TRUE),
-  AutoPitchType = factor("Four-Seam", levels = levels(train$AutoPitchType)),
-  RelSpeed = seq(min(train$RelSpeed), max(train$RelSpeed), by = 10),  
-  SpinRate = seq(min(train$SpinRate), max(train$SpinRate), by = 400),  
-  InducedVertBreak = seq(min(train$InducedVertBreak), max(train$InducedVertBreak), by = 10),  
-  HorzBreak = seq(min(train$HorzBreak), max(train$HorzBreak), by = 10),  
-  PlateLocHeight = seq(min(train$PlateLocHeight), max(train$PlateLocHeight), by = 2),  
-  PlateLocSide = seq(min(train$PlateLocSide), max(train$PlateLocSide), by = 2),
-  stringsAsFactors = FALSE  # Prevent auto conversion to factors
+test_fastball <- data.frame(
+  PitcherThrows = factor("Right", levels = levels(train$PitcherThrows)),
+  BatterSide = factor("Left", levels = levels(train$BatterSide)),
+  Balls = factor(3, levels = levels(train$Balls), ordered = TRUE),
+  Strikes = factor(2, levels = levels(train$Strikes), ordered = TRUE),
+  RelSpeed = 90,  
+  SpinRate = 2276,  
+  InducedVertBreak = 21.6,  
+  HorzBreak = 8.74,  
+  PlateLocHeight = 1.96,  
+  PlateLocSide = -0.6  
 )
 
+single_prediction <- predict(rf_model, newdata = test_fastball, type = "prob")
+
+print(single_prediction)
 
 
-str(fastball_grid)
-fastball_predictions <- predict(rf_model, newdata = fastball_grid, type = "prob")
 ```
+
 
