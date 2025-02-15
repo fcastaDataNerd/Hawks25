@@ -1,0 +1,160 @@
+
+---
+title: "Rick Force Zone Sanford 8/5"
+output: 
+  html_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(readxl)
+library(dplyr)
+library(ggplot2)
+library(knitr)
+library(plotly)
+library(kableExtra)
+library(tidyr)
+
+# Load the data
+file_path <-"C:\\Users\\Franco Castagliuolo\\OneDrive - Bentley University\\Sanford85.xlsx"
+keene_data <- read_excel(file_path)
+```
+
+```{r}
+strike_zone_limits <- list(
+  xmin = -0.85,
+  xmax = 0.85,
+  ymin = 1.5,
+  ymax = 3.5
+)
+
+
+umpire_data <- keene_data %>%
+  filter(PitchCall %in% c("BallCalled", "StrikeCalled")) %>%
+  select(Pitcher, Batter, PitchCall, PlateLocHeight, PlateLocSide, PitcherTeam) %>%
+  mutate(
+    CorrectCall = case_when(
+      PitchCall == "BallCalled" & (PlateLocSide < strike_zone_limits$xmin | PlateLocSide > strike_zone_limits$xmax | PlateLocHeight < strike_zone_limits$ymin | PlateLocHeight > strike_zone_limits$ymax) ~ "Correct",
+      PitchCall == "StrikeCalled" & (PlateLocSide >= strike_zone_limits$xmin & PlateLocSide <= strike_zone_limits$xmax & PlateLocHeight >= strike_zone_limits$ymin & PlateLocHeight <= strike_zone_limits$ymax) ~ "Correct",
+      TRUE ~ "Incorrect"
+    ),
+    Distance = case_when(
+      PitchCall == "BallCalled" & PlateLocSide < strike_zone_limits$xmin & PlateLocHeight >= strike_zone_limits$ymin & PlateLocHeight <= strike_zone_limits$ymax ~ (strike_zone_limits$xmin - PlateLocSide) * 12,
+      PitchCall == "BallCalled" & PlateLocSide > strike_zone_limits$xmax & PlateLocHeight >= strike_zone_limits$ymin & PlateLocHeight <= strike_zone_limits$ymax ~ (PlateLocSide - strike_zone_limits$xmax) * 12,
+      PitchCall == "BallCalled" & PlateLocHeight < strike_zone_limits$ymin & PlateLocSide >= strike_zone_limits$xmin & PlateLocSide <= strike_zone_limits$xmax ~ (strike_zone_limits$ymin - PlateLocHeight) * 12,
+      PitchCall == "BallCalled" & PlateLocHeight > strike_zone_limits$ymax & PlateLocSide >= strike_zone_limits$xmin & PlateLocSide <= strike_zone_limits$xmax ~ (PlateLocHeight - strike_zone_limits$ymax) * 12,
+      PitchCall == "BallCalled" & (PlateLocSide < strike_zone_limits$xmin | PlateLocSide > strike_zone_limits$xmax) & (PlateLocHeight < strike_zone_limits$ymin | PlateLocHeight > strike_zone_limits$ymax) ~ sqrt((pmax(0, strike_zone_limits$xmin - PlateLocSide, PlateLocSide - strike_zone_limits$xmax))^2 + (pmax(0, strike_zone_limits$ymin - PlateLocHeight, PlateLocHeight - strike_zone_limits$ymax))^2) * 12,
+      
+      # Strikes called as balls
+      PitchCall == "StrikeCalled" ~ sqrt((pmax(0, strike_zone_limits$xmin - PlateLocSide, PlateLocSide - strike_zone_limits$xmax))^2 + (pmax(0, strike_zone_limits$ymin - PlateLocHeight, PlateLocHeight - strike_zone_limits$ymax))^2) * 12
+    )
+  )
+
+plot <- ggplot(umpire_data, aes(x = PlateLocSide, y = PlateLocHeight, color = PitchCall, text = paste("Pitcher: ", Pitcher, "<br>Batter: ", Batter, "<br>Distance: ", round(Distance, 2), " inches"))) +
+  geom_point(data = umpire_data %>% filter(CorrectCall == "Correct"), size = 1, shape = 16) + # Correct calls as smaller dots
+  geom_point(data = umpire_data %>% filter(CorrectCall == "Incorrect"), size = 2, shape = 4, stroke = 2) + 
+  geom_rect(aes(xmin = strike_zone_limits$xmin, xmax = strike_zone_limits$xmax, ymin = strike_zone_limits$ymin, ymax = strike_zone_limits$ymax), fill = NA, color = "black", linetype = "solid", size = 1) + # Strike zone box
+  scale_x_continuous(limits = c(-2, 2)) +
+  scale_y_continuous(limits = c(0, 5)) +
+  coord_fixed(ratio = 1) + # Adjust ratio to shrink vertical distance
+  labs(title = "Umpire's Ball and Strike Calls",
+       x = "Horizontal Location (feet)",
+       y = "Vertical Location (feet)",
+       color = "Pitch Call") +
+  scale_color_manual(values = c("BallCalled" = "green", "StrikeCalled" = "red")) +
+  theme_minimal() +
+  theme(
+    legend.position = "right",
+    panel.grid.major = element_line(color = "grey80"),
+    panel.grid.minor = element_line(color = "grey90"),
+    axis.text = element_text(color = "black"),
+    axis.title = element_text(color = "black"),
+    plot.title = element_text(color = "black"),
+    legend.background = element_rect(fill = "white", color = NA),
+    legend.key = element_rect(fill = "white", color = NA),
+    legend.text = element_text(color = "black"),
+    legend.title = element_text(color = "black"),
+    plot.margin = unit(c(2, 2, 2, 2), "cm") # Increase plot margins
+  )
+
+plotly_plot <- ggplotly(plot, tooltip = "text") %>%
+  layout(clickmode = 'event+select') # Require clicking to see the data
+
+plotly_plot
+
+```
+
+```{r}
+
+
+# Filter data and calculate correct percentages for Vermont and Opponent
+vermont_summary <- keene_data %>%
+  filter(PitchCall %in% c("BallCalled", "StrikeCalled"), PitcherTeam == "VER_MOU") %>%
+  filter(!is.na(PlateLocSide) & !is.na(PlateLocHeight)) %>%
+  mutate(
+    TrueBall = PlateLocSide < strike_zone_limits$xmin | PlateLocSide > strike_zone_limits$xmax | PlateLocHeight < strike_zone_limits$ymin | PlateLocHeight > strike_zone_limits$ymax,
+    TrueStrike = PlateLocSide >= strike_zone_limits$xmin & PlateLocSide <= strike_zone_limits$xmax & PlateLocHeight >= strike_zone_limits$ymin & PlateLocHeight <= strike_zone_limits$ymax
+  ) %>%
+  summarise(
+    Team = "VER_MOU",
+    Total_TrueBalls = sum(TrueBall),
+    Correct_BallCalls = sum(PitchCall == "BallCalled" & TrueBall),
+    Total_TrueStrikes = sum(TrueStrike),
+    Correct_StrikeCalls = sum(PitchCall == "StrikeCalled" & TrueStrike),
+    Correct_Percentage_BallCalled = ifelse(Total_TrueBalls > 0, round(Correct_BallCalls / Total_TrueBalls * 100,2), NA),
+    Correct_Percentage_StrikeCalled = ifelse(Total_TrueStrikes > 0, round(Correct_StrikeCalls / Total_TrueStrikes * 100,2), NA)
+  )
+
+opponent_summary <- keene_data %>%
+  filter(PitchCall %in% c("BallCalled", "StrikeCalled"), PitcherTeam != "VER_MOU") %>%
+  filter(!is.na(PlateLocSide) & !is.na(PlateLocHeight)) %>%
+  mutate(
+    TrueBall = PlateLocSide < strike_zone_limits$xmin | PlateLocSide > strike_zone_limits$xmax | PlateLocHeight < strike_zone_limits$ymin | PlateLocHeight > strike_zone_limits$ymax,
+    TrueStrike = PlateLocSide >= strike_zone_limits$xmin & PlateLocSide <= strike_zone_limits$xmax & PlateLocHeight >= strike_zone_limits$ymin & PlateLocHeight <= strike_zone_limits$ymax
+  ) %>%
+  summarise(
+    Team = "Opponent",
+    Total_TrueBalls = sum(TrueBall),
+    Correct_BallCalls = sum(PitchCall == "BallCalled" & TrueBall),
+    Total_TrueStrikes = sum(TrueStrike),
+    Correct_StrikeCalls = sum(PitchCall == "StrikeCalled" & TrueStrike),
+    Correct_Percentage_BallCalled = ifelse(Total_TrueBalls > 0, round(Correct_BallCalls / Total_TrueBalls * 100,2), NA),
+    Correct_Percentage_StrikeCalled = ifelse(Total_TrueStrikes > 0, round(Correct_StrikeCalls / Total_TrueStrikes * 100,2), NA)
+  )
+
+# Combine the summaries
+combined_summary <- bind_rows(vermont_summary, opponent_summary)
+
+# Display the summary table
+kable(combined_summary, caption = "Summary of Correct Ball and Strike Calls") %>%
+  kable_styling(full_width = F, position = "left")
+
+```
+
+Correct_Percentage_BallCalled:
+ - Percentage of balls called correctly from the pitcher's perspective
+ - The Pitching team would prefer a lower percentage
+ - Correct is a pitch outside the zone called a ball
+ - Incorrect is a pitch outside the zone called as a strike
+ 
+ Correct_Percentage_StrikeCalled
+ - Percentage of strikes called correctly from the pitcher's perspective
+ - The pitching team would prefer a higher percentage
+ - Correct is a pitch inside the zone called as a strike
+ - Incorrect is a pitch inside the zone called as a ball
+
+
+The pitching team would prefer:
+
+A lower percentage of accurate ball calls because this indicates more balls are incorrectly called as strikes.
+
+A higher percentage of accurate strike calls because this indicates fewer strikes are incorrectly called as balls.
+
+
+
+
+
+
+
+
