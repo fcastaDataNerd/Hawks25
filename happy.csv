@@ -1,0 +1,945 @@
+team_id,team_name,team_url,conference_id,conference,division,year,season_id
+NA,Boston College,/teams/596496,821,ACC,1,2025,NA
+NA,California,/teams/596511,821,ACC,1,2025,NA
+NA,Clemson,/teams/596523,821,ACC,1,2025,NA
+NA,Duke,/teams/596708,821,ACC,1,2025,NA
+NA,Florida St.,/teams/596545,821,ACC,1,2025,NA
+NA,Georgia Tech,/teams/596553,821,ACC,1,2025,NA
+NA,Louisville,/teams/596585,821,ACC,1,2025,NA
+NA,Miami (FL),/teams/596600,821,ACC,1,2025,NA
+NA,NC State,/teams/596628,821,ACC,1,2025,NA
+NA,North Carolina,/teams/596614,821,ACC,1,2025,NA
+NA,Notre Dame,/teams/596637,821,ACC,1,2025,NA
+NA,Pittsburgh,/teams/596649,821,ACC,1,2025,NA
+NA,Stanford,/teams/596688,821,ACC,1,2025,NA
+NA,Virginia,/teams/596439,821,ACC,1,2025,NA
+NA,Virginia Tech,/teams/596438,821,ACC,1,2025,NA
+NA,Wake Forest,/teams/596441,821,ACC,1,2025,NA
+NA,Austin Peay,/teams/596490,920,ASUN,1,2025,NA
+NA,Bellarmine,/teams/596693,920,ASUN,1,2025,NA
+NA,Central Ark.,/teams/596457,920,ASUN,1,2025,NA
+NA,Eastern Ky.,/teams/596538,920,ASUN,1,2025,NA
+NA,FGCU,/teams/596473,920,ASUN,1,2025,NA
+NA,Jacksonville,/teams/596572,920,ASUN,1,2025,NA
+NA,Lipscomb,/teams/596472,920,ASUN,1,2025,NA
+NA,North Ala.,/teams/596475,920,ASUN,1,2025,NA
+NA,North Florida,/teams/596467,920,ASUN,1,2025,NA
+NA,Queens (NC),/teams/596696,920,ASUN,1,2025,NA
+NA,Stetson,/teams/596720,920,ASUN,1,2025,NA
+NA,West Ga.,/teams/596947,920,ASUN,1,2025,NA
+NA,Binghamton,/teams/596495,845,America East,1,2025,NA
+NA,Bryant,/teams/596501,845,America East,1,2025,NA
+NA,Maine,/teams/596588,845,America East,1,2025,NA
+NA,NJIT,/teams/596621,845,America East,1,2025,NA
+NA,UAlbany,/teams/596482,845,America East,1,2025,NA
+NA,UMBC,/teams/596592,845,America East,1,2025,NA
+NA,UMass Lowell,/teams/596586,845,America East,1,2025,NA
+NA,Davidson,/teams/596531,820,Atlantic 10,1,2025,NA
+NA,Dayton,/teams/596532,820,Atlantic 10,1,2025,NA
+NA,Fordham,/teams/596547,820,Atlantic 10,1,2025,NA
+NA,George Mason,/teams/596548,820,Atlantic 10,1,2025,NA
+NA,George Washington,/teams/596549,820,Atlantic 10,1,2025,NA
+NA,Massachusetts,/teams/596595,820,Atlantic 10,1,2025,NA
+NA,Rhode Island,/teams/596656,820,Atlantic 10,1,2025,NA
+NA,Richmond,/teams/596658,820,Atlantic 10,1,2025,NA
+NA,Saint Joseph's,/teams/596663,820,Atlantic 10,1,2025,NA
+NA,Saint Louis,/teams/596664,820,Atlantic 10,1,2025,NA
+NA,St. Bonaventure,/teams/596662,820,Atlantic 10,1,2025,NA
+NA,VCU,/teams/596436,820,Atlantic 10,1,2025,NA
+NA,Arizona,/teams/596706,25354,Big 12,1,2025,NA
+NA,Arizona St.,/teams/596485,25354,Big 12,1,2025,NA
+NA,BYU,/teams/596499,25354,Big 12,1,2025,NA
+NA,Baylor,/teams/596493,25354,Big 12,1,2025,NA
+NA,Cincinnati,/teams/596521,25354,Big 12,1,2025,NA
+NA,Houston,/teams/596561,25354,Big 12,1,2025,NA
+NA,Kansas,/teams/596575,25354,Big 12,1,2025,NA
+NA,Kansas St.,/teams/596574,25354,Big 12,1,2025,NA
+NA,Oklahoma St.,/teams/596714,25354,Big 12,1,2025,NA
+NA,TCU,/teams/596421,25354,Big 12,1,2025,NA
+NA,Texas Tech,/teams/596423,25354,Big 12,1,2025,NA
+NA,UCF,/teams/596519,25354,Big 12,1,2025,NA
+NA,Utah,/teams/596432,25354,Big 12,1,2025,NA
+NA,West Virginia,/teams/596444,25354,Big 12,1,2025,NA
+NA,Butler,/teams/596503,30184,Big East,1,2025,NA
+NA,Creighton,/teams/596529,30184,Big East,1,2025,NA
+NA,Georgetown,/teams/596550,30184,Big East,1,2025,NA
+NA,Seton Hall,/teams/596674,30184,Big East,1,2025,NA
+NA,St. John's (NY),/teams/596717,30184,Big East,1,2025,NA
+NA,UConn,/teams/596526,30184,Big East,1,2025,NA
+NA,Villanova,/teams/596435,30184,Big East,1,2025,NA
+NA,Xavier,/teams/596454,30184,Big East,1,2025,NA
+NA,Charleston So.,/teams/596492,826,Big South,1,2025,NA
+NA,Gardner-Webb,/teams/596461,826,Big South,1,2025,NA
+NA,High Point,/teams/596705,826,Big South,1,2025,NA
+NA,Longwood,/teams/596582,826,Big South,1,2025,NA
+NA,Presbyterian,/teams/596464,826,Big South,1,2025,NA
+NA,Radford,/teams/596655,826,Big South,1,2025,NA
+NA,UNC Asheville,/teams/596613,826,Big South,1,2025,NA
+NA,USC Upstate,/teams/596469,826,Big South,1,2025,NA
+NA,Winthrop,/teams/596451,826,Big South,1,2025,NA
+NA,Illinois,/teams/596563,827,Big Ten,1,2025,NA
+NA,Indiana,/teams/596566,827,Big Ten,1,2025,NA
+NA,Iowa,/teams/596569,827,Big Ten,1,2025,NA
+NA,Maryland,/teams/596593,827,Big Ten,1,2025,NA
+NA,Michigan,/teams/596602,827,Big Ten,1,2025,NA
+NA,Michigan St.,/teams/596601,827,Big Ten,1,2025,NA
+NA,Minnesota,/teams/596604,827,Big Ten,1,2025,NA
+NA,Nebraska,/teams/596712,827,Big Ten,1,2025,NA
+NA,Northwestern,/teams/596636,827,Big Ten,1,2025,NA
+NA,Ohio St.,/teams/596639,827,Big Ten,1,2025,NA
+NA,Oregon,/teams/596644,827,Big Ten,1,2025,NA
+NA,Penn St.,/teams/596647,827,Big Ten,1,2025,NA
+NA,Purdue,/teams/596653,827,Big Ten,1,2025,NA
+NA,Rutgers,/teams/596660,827,Big Ten,1,2025,NA
+NA,Southern California,/teams/596681,827,Big Ten,1,2025,NA
+NA,UCLA,/teams/596514,827,Big Ten,1,2025,NA
+NA,Washington,/teams/596443,827,Big Ten,1,2025,NA
+NA,CSU Bakersfield,/teams/596505,904,Big West,1,2025,NA
+NA,CSUN,/teams/596508,904,Big West,1,2025,NA
+NA,Cal Poly,/teams/596504,904,Big West,1,2025,NA
+NA,Cal St. Fullerton,/teams/596506,904,Big West,1,2025,NA
+NA,Hawaii,/teams/596557,904,Big West,1,2025,NA
+NA,Long Beach St.,/teams/596507,904,Big West,1,2025,NA
+NA,UC Davis,/teams/596512,904,Big West,1,2025,NA
+NA,UC Irvine,/teams/596513,904,Big West,1,2025,NA
+NA,UC Riverside,/teams/596515,904,Big West,1,2025,NA
+NA,UC San Diego,/teams/596694,904,Big West,1,2025,NA
+NA,UC Santa Barbara,/teams/596510,904,Big West,1,2025,NA
+NA,Campbell,/teams/596516,837,CAA,1,2025,NA
+NA,Col. of Charleston,/teams/596459,837,CAA,1,2025,NA
+NA,Delaware,/teams/596534,837,CAA,1,2025,NA
+NA,Elon,/teams/596460,837,CAA,1,2025,NA
+NA,Hofstra,/teams/596558,837,CAA,1,2025,NA
+NA,Monmouth,/teams/596609,837,CAA,1,2025,NA
+NA,N.C. A&T,/teams/596627,837,CAA,1,2025,NA
+NA,Northeastern,/teams/596631,837,CAA,1,2025,NA
+NA,Stony Brook,/teams/596690,837,CAA,1,2025,NA
+NA,Towson,/teams/596428,837,CAA,1,2025,NA
+NA,UNCW,/teams/596617,837,CAA,1,2025,NA
+NA,William & Mary,/teams/596450,837,CAA,1,2025,NA
+NA,DBU,/teams/596703,24312,CUSA,1,2025,NA
+NA,FIU,/teams/596544,24312,CUSA,1,2025,NA
+NA,Jacksonville St.,/teams/596571,24312,CUSA,1,2025,NA
+NA,Kennesaw St.,/teams/596463,24312,CUSA,1,2025,NA
+NA,Liberty,/teams/596581,24312,CUSA,1,2025,NA
+NA,Louisiana Tech,/teams/596584,24312,CUSA,1,2025,NA
+NA,Middle Tenn.,/teams/596603,24312,CUSA,1,2025,NA
+NA,New Mexico St.,/teams/596622,24312,CUSA,1,2025,NA
+NA,Sam Houston,/teams/596667,24312,CUSA,1,2025,NA
+NA,Western Ky.,/teams/596447,24312,CUSA,1,2025,NA
+NA,Oregon St.,/teams/596643,99000,DI Independent,1,2025,NA
+NA,Milwaukee,/teams/596452,881,Horizon,1,2025,NA
+NA,Northern Ky.,/teams/596634,881,Horizon,1,2025,NA
+NA,Oakland,/teams/596638,881,Horizon,1,2025,NA
+NA,Purdue Fort Wayne,/teams/596567,881,Horizon,1,2025,NA
+NA,Wright St.,/teams/596453,881,Horizon,1,2025,NA
+NA,Youngstown St.,/teams/596456,881,Horizon,1,2025,NA
+NA,Brown,/teams/596500,865,Ivy League,1,2025,NA
+NA,Columbia,/teams/596525,865,Ivy League,1,2025,NA
+NA,Cornell,/teams/596528,865,Ivy League,1,2025,NA
+NA,Dartmouth,/teams/596530,865,Ivy League,1,2025,NA
+NA,Harvard,/teams/596556,865,Ivy League,1,2025,NA
+NA,Penn,/teams/596716,865,Ivy League,1,2025,NA
+NA,Princeton,/teams/596652,865,Ivy League,1,2025,NA
+NA,Yale,/teams/596455,865,Ivy League,1,2025,NA
+NA,Canisius,/teams/596517,871,MAAC,1,2025,NA
+NA,Fairfield,/teams/596540,871,MAAC,1,2025,NA
+NA,Iona,/teams/596568,871,MAAC,1,2025,NA
+NA,Manhattan,/teams/596589,871,MAAC,1,2025,NA
+NA,Marist,/teams/596590,871,MAAC,1,2025,NA
+NA,Merrimack,/teams/596458,871,MAAC,1,2025,NA
+NA,Mount St. Mary's,/teams/596611,871,MAAC,1,2025,NA
+NA,Niagara,/teams/596625,871,MAAC,1,2025,NA
+NA,Quinnipiac,/teams/596654,871,MAAC,1,2025,NA
+NA,Rider,/teams/596659,871,MAAC,1,2025,NA
+NA,Sacred Heart,/teams/596661,871,MAAC,1,2025,NA
+NA,Saint Peter's,/teams/596666,871,MAAC,1,2025,NA
+NA,Siena,/teams/596675,871,MAAC,1,2025,NA
+NA,Akron,/teams/596419,875,MAC,1,2025,NA
+NA,Ball St.,/teams/596491,875,MAC,1,2025,NA
+NA,Bowling Green,/teams/596497,875,MAC,1,2025,NA
+NA,Central Mich.,/teams/596520,875,MAC,1,2025,NA
+NA,Eastern Mich.,/teams/596539,875,MAC,1,2025,NA
+NA,Kent St.,/teams/596576,875,MAC,1,2025,NA
+NA,Miami (OH),/teams/596599,875,MAC,1,2025,NA
+NA,NIU,/teams/596633,875,MAC,1,2025,NA
+NA,Ohio,/teams/596640,875,MAC,1,2025,NA
+NA,Toledo,/teams/596427,875,MAC,1,2025,NA
+NA,Western Mich.,/teams/596448,875,MAC,1,2025,NA
+NA,Belmont,/teams/596470,884,MVC,1,2025,NA
+NA,Bradley,/teams/596498,884,MVC,1,2025,NA
+NA,Evansville,/teams/596709,884,MVC,1,2025,NA
+NA,Illinois St.,/teams/596562,884,MVC,1,2025,NA
+NA,Indiana St.,/teams/596565,884,MVC,1,2025,NA
+NA,Missouri St.,/teams/596685,884,MVC,1,2025,NA
+NA,Murray St.,/teams/596612,884,MVC,1,2025,NA
+NA,Southern Ill.,/teams/596682,884,MVC,1,2025,NA
+NA,UIC,/teams/596564,884,MVC,1,2025,NA
+NA,Valparaiso,/teams/596433,884,MVC,1,2025,NA
+NA,Air Force,/teams/596430,5486,Mountain West,1,2025,NA
+NA,Fresno St.,/teams/596707,5486,Mountain West,1,2025,NA
+NA,Nevada,/teams/596620,5486,Mountain West,1,2025,NA
+NA,New Mexico,/teams/596623,5486,Mountain West,1,2025,NA
+NA,San Diego St.,/teams/596669,5486,Mountain West,1,2025,NA
+NA,San Jose St.,/teams/596672,5486,Mountain West,1,2025,NA
+NA,UNLV,/teams/596619,5486,Mountain West,1,2025,NA
+NA,Washington St.,/teams/596442,5486,Mountain West,1,2025,NA
+NA,Central Conn. St.,/teams/596518,846,NEC,1,2025,NA
+NA,Coppin St.,/teams/596527,846,NEC,1,2025,NA
+NA,Delaware St.,/teams/596533,846,NEC,1,2025,NA
+NA,FDU,/teams/596541,846,NEC,1,2025,NA
+NA,LIU,/teams/596711,846,NEC,1,2025,NA
+NA,Le Moyne,/teams/596699,846,NEC,1,2025,NA
+NA,Mercyhurst,/teams/596906,846,NEC,1,2025,NA
+NA,Norfolk St.,/teams/596626,846,NEC,1,2025,NA
+NA,Stonehill,/teams/596698,846,NEC,1,2025,NA
+NA,UMES,/teams/596594,846,NEC,1,2025,NA
+NA,Wagner,/teams/596440,846,NEC,1,2025,NA
+NA,Eastern Ill.,/teams/596537,902,OVC,1,2025,NA
+NA,Lindenwood,/teams/596695,902,OVC,1,2025,NA
+NA,Little Rock,/teams/596488,902,OVC,1,2025,NA
+NA,Morehead St.,/teams/596610,902,OVC,1,2025,NA
+NA,SIUE,/teams/596683,902,OVC,1,2025,NA
+NA,Southeast Mo. St.,/teams/596718,902,OVC,1,2025,NA
+NA,Southern Ind.,/teams/596697,902,OVC,1,2025,NA
+NA,Tennessee Tech,/teams/596691,902,OVC,1,2025,NA
+NA,UT Martin,/teams/596692,902,OVC,1,2025,NA
+NA,Western Ill.,/teams/596446,902,OVC,1,2025,NA
+NA,Army West Point,/teams/596702,838,Patriot,1,2025,NA
+NA,Bucknell,/teams/596502,838,Patriot,1,2025,NA
+NA,Holy Cross,/teams/596559,838,Patriot,1,2025,NA
+NA,Lafayette,/teams/596578,838,Patriot,1,2025,NA
+NA,Lehigh,/teams/596580,838,Patriot,1,2025,NA
+NA,Navy,/teams/596431,838,Patriot,1,2025,NA
+NA,Alabama,/teams/596480,911,SEC,1,2025,NA
+NA,Arkansas,/teams/596487,911,SEC,1,2025,NA
+NA,Auburn,/teams/596489,911,SEC,1,2025,NA
+NA,Florida,/teams/596546,911,SEC,1,2025,NA
+NA,Georgia,/teams/596554,911,SEC,1,2025,NA
+NA,Kentucky,/teams/596577,911,SEC,1,2025,NA
+NA,LSU,/teams/596583,911,SEC,1,2025,NA
+NA,Mississippi St.,/teams/596605,911,SEC,1,2025,NA
+NA,Missouri,/teams/596608,911,SEC,1,2025,NA
+NA,Oklahoma,/teams/596641,911,SEC,1,2025,NA
+NA,Ole Miss,/teams/596607,911,SEC,1,2025,NA
+NA,South Carolina,/teams/596677,911,SEC,1,2025,NA
+NA,Tennessee,/teams/596721,911,SEC,1,2025,NA
+NA,Texas,/teams/596425,911,SEC,1,2025,NA
+NA,Texas A&M,/teams/596420,911,SEC,1,2025,NA
+NA,Vanderbilt,/teams/596434,911,SEC,1,2025,NA
+NA,Alabama A&M,/teams/596478,916,SWAC,1,2025,NA
+NA,Alabama St.,/teams/596479,916,SWAC,1,2025,NA
+NA,Alcorn,/teams/596483,916,SWAC,1,2025,NA
+NA,Ark.-Pine Bluff,/teams/596466,916,SWAC,1,2025,NA
+NA,Bethune-Cookman,/teams/596494,916,SWAC,1,2025,NA
+NA,Florida A&M,/teams/596542,916,SWAC,1,2025,NA
+NA,Grambling,/teams/596710,916,SWAC,1,2025,NA
+NA,Jackson St.,/teams/596570,916,SWAC,1,2025,NA
+NA,Mississippi Val.,/teams/596606,916,SWAC,1,2025,NA
+NA,Prairie View,/teams/596651,916,SWAC,1,2025,NA
+NA,Southern U.,/teams/596684,916,SWAC,1,2025,NA
+NA,Texas Southern,/teams/596422,916,SWAC,1,2025,NA
+NA,ETSU,/teams/596536,912,SoCon,1,2025,NA
+NA,Mercer,/teams/596598,912,SoCon,1,2025,NA
+NA,Samford,/teams/596668,912,SoCon,1,2025,NA
+NA,The Citadel,/teams/596522,912,SoCon,1,2025,NA
+NA,UNC Greensboro,/teams/596616,912,SoCon,1,2025,NA
+NA,VMI,/teams/596437,912,SoCon,1,2025,NA
+NA,Western Caro.,/teams/596445,912,SoCon,1,2025,NA
+NA,Wofford,/teams/596704,912,SoCon,1,2025,NA
+NA,A&M-Corpus Christi,/teams/596471,914,Southland,1,2025,NA
+NA,Houston Christian,/teams/596560,914,Southland,1,2025,NA
+NA,Lamar University,/teams/596579,914,Southland,1,2025,NA
+NA,McNeese,/teams/596596,914,Southland,1,2025,NA
+NA,New Orleans,/teams/596624,914,Southland,1,2025,NA
+NA,Nicholls,/teams/596713,914,Southland,1,2025,NA
+NA,Northwestern St.,/teams/596635,914,Southland,1,2025,NA
+NA,SFA,/teams/596689,914,Southland,1,2025,NA
+NA,Southeastern La.,/teams/596680,914,Southland,1,2025,NA
+NA,UIW,/teams/596468,914,Southland,1,2025,NA
+NA,UTRGV,/teams/596646,914,Southland,1,2025,NA
+NA,North Dakota St.,/teams/596629,819,Summit League,1,2025,NA
+NA,Northern Colo.,/teams/596632,819,Summit League,1,2025,NA
+NA,Omaha,/teams/596618,819,Summit League,1,2025,NA
+NA,Oral Roberts,/teams/596715,819,Summit League,1,2025,NA
+NA,South Dakota St.,/teams/596678,819,Summit League,1,2025,NA
+NA,St. Thomas (MN),/teams/596417,819,Summit League,1,2025,NA
+NA,App State,/teams/596484,818,Sun Belt,1,2025,NA
+NA,Arkansas St.,/teams/596486,818,Sun Belt,1,2025,NA
+NA,Coastal Carolina,/teams/596524,818,Sun Belt,1,2025,NA
+NA,Ga. Southern,/teams/596551,818,Sun Belt,1,2025,NA
+NA,Georgia St.,/teams/596552,818,Sun Belt,1,2025,NA
+NA,James Madison,/teams/596573,818,Sun Belt,1,2025,NA
+NA,Louisiana,/teams/596687,818,Sun Belt,1,2025,NA
+NA,Marshall,/teams/596591,818,Sun Belt,1,2025,NA
+NA,Old Dominion,/teams/596642,818,Sun Belt,1,2025,NA
+NA,South Alabama,/teams/596676,818,Sun Belt,1,2025,NA
+NA,Southern Miss.,/teams/596719,818,Sun Belt,1,2025,NA
+NA,Texas St.,/teams/596686,818,Sun Belt,1,2025,NA
+NA,Troy,/teams/596429,818,Sun Belt,1,2025,NA
+NA,ULM,/teams/596630,818,Sun Belt,1,2025,NA
+NA,Charlotte,/teams/596615,823,The American,1,2025,NA
+NA,East Carolina,/teams/596535,823,The American,1,2025,NA
+NA,Fla. Atlantic,/teams/596543,823,The American,1,2025,NA
+NA,Memphis,/teams/596597,823,The American,1,2025,NA
+NA,Rice,/teams/596657,823,The American,1,2025,NA
+NA,South Fla.,/teams/596679,823,The American,1,2025,NA
+NA,Tulane,/teams/596701,823,The American,1,2025,NA
+NA,UAB,/teams/596481,823,The American,1,2025,NA
+NA,UTSA,/teams/596426,823,The American,1,2025,NA
+NA,Wichita St.,/teams/596449,823,The American,1,2025,NA
+NA,Abilene Christian,/teams/596477,923,WAC,1,2025,NA
+NA,California Baptist,/teams/596476,923,WAC,1,2025,NA
+NA,Grand Canyon,/teams/596462,923,WAC,1,2025,NA
+NA,Sacramento St.,/teams/596509,923,WAC,1,2025,NA
+NA,Seattle U,/teams/596465,923,WAC,1,2025,NA
+NA,Tarleton St.,/teams/596700,923,WAC,1,2025,NA
+NA,UT Arlington,/teams/596424,923,WAC,1,2025,NA
+NA,Utah Tech,/teams/596418,923,WAC,1,2025,NA
+NA,Utah Valley,/teams/596474,923,WAC,1,2025,NA
+NA,Gonzaga,/teams/596555,922,WCC,1,2025,NA
+NA,LMU (CA),/teams/596587,922,WCC,1,2025,NA
+NA,Pacific,/teams/596645,922,WCC,1,2025,NA
+NA,Pepperdine,/teams/596648,922,WCC,1,2025,NA
+NA,Portland,/teams/596650,922,WCC,1,2025,NA
+NA,Saint Mary's (CA),/teams/596665,922,WCC,1,2025,NA
+NA,San Diego,/teams/596670,922,WCC,1,2025,NA
+NA,San Francisco,/teams/596671,922,WCC,1,2025,NA
+NA,Santa Clara,/teams/596673,922,WCC,1,2025,NA
+NA,Bloomfield,/teams/596953,28752,CACC,2,2025,NA
+NA,Bridgeport,/teams/596864,28752,CACC,2,2025,NA
+NA,Caldwell,/teams/596955,28752,CACC,2,2025,NA
+NA,Chestnut Hill,/teams/596795,28752,CACC,2,2025,NA
+NA,Dominican (NY),/teams/596773,28752,CACC,2,2025,NA
+NA,Felician,/teams/596796,28752,CACC,2,2025,NA
+NA,Georgian Court,/teams/601301,28752,CACC,2,2025,NA
+NA,Goldey-Beacom,/teams/596767,28752,CACC,2,2025,NA
+NA,Holy Family,/teams/596975,28752,CACC,2,2025,NA
+NA,Jefferson,/teams/596923,28752,CACC,2,2025,NA
+NA,Lincoln (PA),/teams/596899,28752,CACC,2,2025,NA
+NA,Post,/teams/596744,28752,CACC,2,2025,NA
+NA,Wilmington (DE),/teams/596758,28752,CACC,2,2025,NA
+NA,CSUSB,/teams/596867,828,CCAA,2,2025,NA
+NA,Cal Poly Pomona,/teams/596865,828,CCAA,2,2025,NA
+NA,Cal St. Dom. Hills,/teams/596866,828,CCAA,2,2025,NA
+NA,Cal St. East Bay,/teams/596869,828,CCAA,2,2025,NA
+NA,Cal St. Monterey Bay,/teams/596806,828,CCAA,2,2025,NA
+NA,Cal St. San Marcos,/teams/596839,828,CCAA,2,2025,NA
+NA,Cal State LA,/teams/596870,828,CCAA,2,2025,NA
+NA,Chico St.,/teams/596868,828,CCAA,2,2025,NA
+NA,San Fran. St.,/teams/596934,828,CCAA,2,2025,NA
+NA,Sonoma St.,/teams/596937,828,CCAA,2,2025,NA
+NA,Stanislaus St.,/teams/596871,828,CCAA,2,2025,NA
+NA,Barton,/teams/596792,4423,Conference Carolinas,2,2025,NA
+NA,Belmont Abbey,/teams/596760,4423,Conference Carolinas,2,2025,NA
+NA,Chowan,/teams/596772,4423,Conference Carolinas,2,2025,NA
+NA,Emmanuel (GA),/teams/596838,4423,Conference Carolinas,2,2025,NA
+NA,Erskine,/teams/596967,4423,Conference Carolinas,2,2025,NA
+NA,Francis Marion,/teams/596726,4423,Conference Carolinas,2,2025,NA
+NA,King (TN),/teams/596803,4423,Conference Carolinas,2,2025,NA
+NA,Mount Olive,/teams/596738,4423,Conference Carolinas,2,2025,NA
+NA,North Greenville,/teams/596779,4423,Conference Carolinas,2,2025,NA
+NA,Shorter,/teams/596827,4423,Conference Carolinas,2,2025,NA
+NA,Southern Wesleyan,/teams/596837,4423,Conference Carolinas,2,2025,NA
+NA,UNC Pembroke,/teams/596922,4423,Conference Carolinas,2,2025,NA
+NA,Young Harris,/teams/596830,4423,Conference Carolinas,2,2025,NA
+NA,Bluefield St.,/teams/596954,99010,DII Independent,2,2025,NA
+NA,Salem (WV),/teams/596793,99010,DII Independent,2,2025,NA
+NA,Virginia St.,/teams/596944,99010,DII Independent,2,2025,NA
+NA,D'Youville,/teams/596849,11265,ECC,2,2025,NA
+NA,Mercy,/teams/596905,11265,ECC,2,2025,NA
+NA,Molloy,/teams/596914,11265,ECC,2,2025,NA
+NA,Queens (NY),/teams/596925,11265,ECC,2,2025,NA
+NA,St. Thomas Aquinas,/teams/596750,11265,ECC,2,2025,NA
+NA,Staten Island,/teams/596845,11265,ECC,2,2025,NA
+NA,Ashland,/teams/596855,30182,G-MAC,2,2025,NA
+NA,Cedarville,/teams/596817,30182,G-MAC,2,2025,NA
+NA,Findlay,/teams/596725,30182,G-MAC,2,2025,NA
+NA,Hillsdale,/teams/596890,30182,G-MAC,2,2025,NA
+NA,Ky. Wesleyan,/teams/596894,30182,G-MAC,2,2025,NA
+NA,Lake Erie,/teams/596764,30182,G-MAC,2,2025,NA
+NA,Malone,/teams/596821,30182,G-MAC,2,2025,NA
+NA,Northwood,/teams/596920,30182,G-MAC,2,2025,NA
+NA,Ohio Dominican,/teams/596815,30182,G-MAC,2,2025,NA
+NA,Thomas More,/teams/596969,30182,G-MAC,2,2025,NA
+NA,Tiffin,/teams/596753,30182,G-MAC,2,2025,NA
+NA,Walsh,/teams/596823,30182,G-MAC,2,2025,NA
+NA,Ark.-Monticello,/teams/596768,30144,GAC,2,2025,NA
+NA,Arkansas Tech,/teams/596952,30144,GAC,2,2025,NA
+NA,East Central,/teams/596774,30144,GAC,2,2025,NA
+NA,Harding,/teams/596730,30144,GAC,2,2025,NA
+NA,Henderson St.,/teams/596731,30144,GAC,2,2025,NA
+NA,Northwestern Okla.,/teams/596832,30144,GAC,2,2025,NA
+NA,Okla. Baptist,/teams/596841,30144,GAC,2,2025,NA
+NA,Ouachita Baptist,/teams/596742,30144,GAC,2,2025,NA
+NA,Southeastern Okla.,/teams/596751,30144,GAC,2,2025,NA
+NA,Southern Ark.,/teams/596752,30144,GAC,2,2025,NA
+NA,Southern Nazarene,/teams/596828,30144,GAC,2,2025,NA
+NA,Southwestern Okla.,/teams/596771,30144,GAC,2,2025,NA
+NA,Davenport,/teams/596843,854,GLIAC,2,2025,NA
+NA,Grand Valley St.,/teams/596889,854,GLIAC,2,2025,NA
+NA,Purdue Northwest,/teams/596844,854,GLIAC,2,2025,NA
+NA,Roosevelt ,/teams/596972,854,GLIAC,2,2025,NA
+NA,Saginaw Valley,/teams/596929,854,GLIAC,2,2025,NA
+NA,Wayne St. (MI),/teams/596945,854,GLIAC,2,2025,NA
+NA,Wis.-Parkside,/teams/596950,854,GLIAC,2,2025,NA
+NA,Drury,/teams/596965,855,GLVC,2,2025,NA
+NA,Ill. Springfield,/teams/596802,855,GLVC,2,2025,NA
+NA,Lewis,/teams/596898,855,GLVC,2,2025,NA
+NA,Lincoln (MO),/teams/599994,855,GLVC,2,2025,NA
+NA,Maryville (MO),/teams/596904,855,GLVC,2,2025,NA
+NA,McKendree,/teams/596822,855,GLVC,2,2025,NA
+NA,Missouri S&T,/teams/596912,855,GLVC,2,2025,NA
+NA,Mo.-St. Louis,/teams/596913,855,GLVC,2,2025,NA
+NA,Quincy,/teams/596926,855,GLVC,2,2025,NA
+NA,Rockhurst,/teams/596745,855,GLVC,2,2025,NA
+NA,Southwest Baptist,/teams/596765,855,GLVC,2,2025,NA
+NA,Truman St.,/teams/596918,855,GLVC,2,2025,NA
+NA,UIndy,/teams/596892,855,GLVC,2,2025,NA
+NA,Upper Iowa,/teams/596942,855,GLVC,2,2025,NA
+NA,William Jewell,/teams/596816,855,GLVC,2,2025,NA
+NA,Central Wash.,/teams/596960,30012,Great Northwest,2,2025,NA
+NA,Mont. St. Billings,/teams/596882,30012,Great Northwest,2,2025,NA
+NA,Northwest Nazarene,/teams/596741,30012,Great Northwest,2,2025,NA
+NA,Saint Martin's,/teams/596747,30012,Great Northwest,2,2025,NA
+NA,Western Ore.,/teams/596757,30012,Great Northwest,2,2025,NA
+NA,AUM,/teams/596813,858,Gulf South,2,2025,NA
+NA,Alabama Huntsville,/teams/596851,858,Gulf South,2,2025,NA
+NA,Christian Brothers,/teams/596962,858,Gulf South,2,2025,NA
+NA,Delta St.,/teams/596880,858,Gulf South,2,2025,NA
+NA,Lee,/teams/596800,858,Gulf South,2,2025,NA
+NA,Mississippi Col.,/teams/596911,858,Gulf South,2,2025,NA
+NA,Montevallo,/teams/596737,858,Gulf South,2,2025,NA
+NA,Trevecca Nazarene,/teams/596799,858,Gulf South,2,2025,NA
+NA,Union (TN),/teams/596829,858,Gulf South,2,2025,NA
+NA,Valdosta St.,/teams/596943,858,Gulf South,2,2025,NA
+NA,West Ala.,/teams/596900,858,Gulf South,2,2025,NA
+NA,West Florida,/teams/596787,858,Gulf South,2,2025,NA
+NA,Angelo St.,/teams/596854,868,Lone Star,2,2025,NA
+NA,Cameron,/teams/596956,868,Lone Star,2,2025,NA
+NA,Eastern N.M.,/teams/596883,868,Lone Star,2,2025,NA
+NA,Lubbock Christian,/teams/596831,868,Lone Star,2,2025,NA
+NA,Okla. Christian,/teams/596833,868,Lone Star,2,2025,NA
+NA,St. Edward's,/teams/596746,868,Lone Star,2,2025,NA
+NA,St. Mary's (TX),/teams/596748,868,Lone Star,2,2025,NA
+NA,Sul Ross St.,/teams/596970,868,Lone Star,2,2025,NA
+NA,Tex. A&M Int'l,/teams/596811,868,Lone Star,2,2025,NA
+NA,Tex. A&M-Kingsville,/teams/596940,868,Lone Star,2,2025,NA
+NA,Tex. Permian Basin,/teams/596810,868,Lone Star,2,2025,NA
+NA,Texas-Dallas,/teams/597173,868,Lone Star,2,2025,NA
+NA,UT Tyler,/teams/596846,868,Lone Star,2,2025,NA
+NA,West Tex. A&M,/teams/596948,868,Lone Star,2,2025,NA
+NA,Charleston (WV),/teams/596961,30183,MEC,2,2025,NA
+NA,Concord,/teams/596964,30183,MEC,2,2025,NA
+NA,Davis & Elkins,/teams/596879,30183,MEC,2,2025,NA
+NA,Fairmont St.,/teams/596724,30183,MEC,2,2025,NA
+NA,Frostburg St.,/teams/596847,30183,MEC,2,2025,NA
+NA,Glenville St.,/teams/596729,30183,MEC,2,2025,NA
+NA,Point Park,/teams/597522,30183,MEC,2,2025,NA
+NA,West Liberty,/teams/596755,30183,MEC,2,2025,NA
+NA,West Va. Wesleyan,/teams/596780,30183,MEC,2,2025,NA
+NA,West Virginia St.,/teams/596756,30183,MEC,2,2025,NA
+NA,Wheeling,/teams/596788,30183,MEC,2,2025,NA
+NA,Ark.-Fort Smith,/teams/596814,883,Mid-America Intercollegiate,2,2025,NA
+NA,Central Mo.,/teams/596873,883,Mid-America Intercollegiate,2,2025,NA
+NA,Central Okla.,/teams/596959,883,Mid-America Intercollegiate,2,2025,NA
+NA,Emporia St.,/teams/596966,883,Mid-America Intercollegiate,2,2025,NA
+NA,Fort Hays St.,/teams/596775,883,Mid-America Intercollegiate,2,2025,NA
+NA,Missouri Western,/teams/596777,883,Mid-America Intercollegiate,2,2025,NA
+NA,Mo. Southern St.,/teams/596776,883,Mid-America Intercollegiate,2,2025,NA
+NA,Newman,/teams/596805,883,Mid-America Intercollegiate,2,2025,NA
+NA,Northeastern St.,/teams/596789,883,Mid-America Intercollegiate,2,2025,NA
+NA,Northwest Mo. St.,/teams/596919,883,Mid-America Intercollegiate,2,2025,NA
+NA,Pittsburg St.,/teams/596743,883,Mid-America Intercollegiate,2,2025,NA
+NA,Rogers St.,/teams/596834,883,Mid-America Intercollegiate,2,2025,NA
+NA,Washburn,/teams/596766,883,Mid-America Intercollegiate,2,2025,NA
+NA,Adelphi,/teams/596850,899,NE10,2,2025,NA
+NA,American Int'l,/teams/596853,899,NE10,2,2025,NA
+NA,Assumption,/teams/596856,899,NE10,2,2025,NA
+NA,Bentley,/teams/596862,899,NE10,2,2025,NA
+NA,Franklin Pierce,/teams/596887,899,NE10,2,2025,NA
+NA,New Haven,/teams/596917,899,NE10,2,2025,NA
+NA,Pace,/teams/596921,899,NE10,2,2025,NA
+NA,Saint Michael's,/teams/596933,899,NE10,2,2025,NA
+NA,Southern Conn. St.,/teams/596938,899,NE10,2,2025,NA
+NA,Southern N.H.,/teams/596916,899,NE10,2,2025,NA
+NA,St. Anselm,/teams/596930,899,NE10,2,2025,NA
+NA,Augustana (SD),/teams/596858,12853,NSIC,2,2025,NA
+NA,Bemidji St.,/teams/596860,12853,NSIC,2,2025,NA
+NA,Concordia-St. Paul,/teams/596778,12853,NSIC,2,2025,NA
+NA,Mary,/teams/596809,12853,NSIC,2,2025,NA
+NA,Minn. Duluth,/teams/596910,12853,NSIC,2,2025,NA
+NA,Minn.-Crookston,/teams/596798,12853,NSIC,2,2025,NA
+NA,Minnesota St.,/teams/596902,12853,NSIC,2,2025,NA
+NA,Minot St.,/teams/596818,12853,NSIC,2,2025,NA
+NA,Northern St.,/teams/596740,12853,NSIC,2,2025,NA
+NA,Sioux Falls,/teams/596820,12853,NSIC,2,2025,NA
+NA,Southwest Minn. St.,/teams/596770,12853,NSIC,2,2025,NA
+NA,St. Cloud St.,/teams/596931,12853,NSIC,2,2025,NA
+NA,Wayne St. (NE),/teams/596754,12853,NSIC,2,2025,NA
+NA,Winona St.,/teams/596949,12853,NSIC,2,2025,NA
+NA,Bloomsburg,/teams/596863,906,PSAC,2,2025,NA
+NA,California (PA),/teams/596872,906,PSAC,2,2025,NA
+NA,Clarion,/teams/596874,906,PSAC,2,2025,NA
+NA,East Stroudsburg,/teams/596881,906,PSAC,2,2025,NA
+NA,Gannon,/teams/596888,906,PSAC,2,2025,NA
+NA,Indiana (PA),/teams/596891,906,PSAC,2,2025,NA
+NA,Kutztown,/teams/596895,906,PSAC,2,2025,NA
+NA,Lock Haven,/teams/596901,906,PSAC,2,2025,NA
+NA,Mansfield,/teams/596903,906,PSAC,2,2025,NA
+NA,Millersville,/teams/596909,906,PSAC,2,2025,NA
+NA,Pitt.-Johnstown,/teams/596924,906,PSAC,2,2025,NA
+NA,Seton Hill,/teams/596808,906,PSAC,2,2025,NA
+NA,Shepherd,/teams/596783,906,PSAC,2,2025,NA
+NA,Shippensburg,/teams/596935,906,PSAC,2,2025,NA
+NA,Slippery Rock,/teams/596936,906,PSAC,2,2025,NA
+NA,West Chester,/teams/596946,906,PSAC,2,2025,NA
+NA,Azusa Pacific,/teams/596824,19591,PacWest,2,2025,NA
+NA,Biola,/teams/596842,19591,PacWest,2,2025,NA
+NA,CUI,/teams/596840,19591,PacWest,2,2025,NA
+NA,Chaminade,/teams/596976,19591,PacWest,2,2025,NA
+NA,Fresno Pacific,/teams/596825,19591,PacWest,2,2025,NA
+NA,Hawaii Hilo,/teams/596762,19591,PacWest,2,2025,NA
+NA,Hawaii Pacific,/teams/596761,19591,PacWest,2,2025,NA
+NA,Jessup ,/teams/596974,19591,PacWest,2,2025,NA
+NA,Menlo,/teams/596971,19591,PacWest,2,2025,NA
+NA,Point Loma,/teams/596826,19591,PacWest,2,2025,NA
+NA,Vanguard ,/teams/596973,19591,PacWest,2,2025,NA
+NA,Westmont,/teams/596723,19591,PacWest,2,2025,NA
+NA,Augusta,/teams/596857,12923,Peach Belt,2,2025,NA
+NA,Claflin,/teams/596807,12923,Peach Belt,2,2025,NA
+NA,Columbus St.,/teams/596877,12923,Peach Belt,2,2025,NA
+NA,Flagler,/teams/596812,12923,Peach Belt,2,2025,NA
+NA,Ga. Southwestern,/teams/596728,12923,Peach Belt,2,2025,NA
+NA,Georgia College,/teams/596727,12923,Peach Belt,2,2025,NA
+NA,Lander,/teams/596732,12923,Peach Belt,2,2025,NA
+NA,North Georgia,/teams/596804,12923,Peach Belt,2,2025,NA
+NA,USC Aiken,/teams/596784,12923,Peach Belt,2,2025,NA
+NA,USC Beaufort,/teams/596722,12923,Peach Belt,2,2025,NA
+NA,Adams St.,/teams/596951,13128,RMAC,2,2025,NA
+NA,CSU Pueblo,/teams/596763,13128,RMAC,2,2025,NA
+NA,Colo. Christian,/teams/596785,13128,RMAC,2,2025,NA
+NA,Colo. Sch. of Mines,/teams/596876,13128,RMAC,2,2025,NA
+NA,Colorado Mesa,/teams/596786,13128,RMAC,2,2025,NA
+NA,MSU Denver,/teams/596907,13128,RMAC,2,2025,NA
+NA,N.M. Highlands,/teams/596769,13128,RMAC,2,2025,NA
+NA,Regis (CO),/teams/596927,13128,RMAC,2,2025,NA
+NA,UC-Colo. Springs,/teams/596782,13128,RMAC,2,2025,NA
+NA,Anderson (SC),/teams/596791,12850,SAC,2,2025,NA
+NA,Carson-Newman,/teams/596957,12850,SAC,2,2025,NA
+NA,Catawba,/teams/596958,12850,SAC,2,2025,NA
+NA,Coker,/teams/596963,12850,SAC,2,2025,NA
+NA,Emory & Henry,/teams/596878,12850,SAC,2,2025,NA
+NA,Lenoir-Rhyne,/teams/596733,12850,SAC,2,2025,NA
+NA,Limestone,/teams/596734,12850,SAC,2,2025,NA
+NA,Lincoln Memorial,/teams/596735,12850,SAC,2,2025,NA
+NA,Mars Hill,/teams/596736,12850,SAC,2,2025,NA
+NA,Newberry,/teams/596739,12850,SAC,2,2025,NA
+NA,Tusculum,/teams/596790,12850,SAC,2,2025,NA
+NA,UVA Wise,/teams/596835,12850,SAC,2,2025,NA
+NA,Wingate,/teams/596759,12850,SAC,2,2025,NA
+NA,Albany St. (GA),/teams/596852,913,SIAC,2,2025,NA
+NA,Benedict,/teams/596861,913,SIAC,2,2025,NA
+NA,Clark Atlanta,/teams/596875,913,SIAC,2,2025,NA
+NA,Edward Waters,/teams/596968,913,SIAC,2,2025,NA
+NA,Kentucky St.,/teams/596893,913,SIAC,2,2025,NA
+NA,Lane,/teams/596896,913,SIAC,2,2025,NA
+NA,LeMoyne-Owen,/teams/596897,913,SIAC,2,2025,NA
+NA,Miles,/teams/596908,913,SIAC,2,2025,NA
+NA,Morehouse,/teams/596915,913,SIAC,2,2025,NA
+NA,Savannah St.,/teams/596848,913,SIAC,2,2025,NA
+NA,Spring Hill,/teams/596836,913,SIAC,2,2025,NA
+NA,Tuskegee,/teams/596941,913,SIAC,2,2025,NA
+NA,Barry,/teams/596859,919,Sunshine State,2,2025,NA
+NA,Eckerd,/teams/596884,919,Sunshine State,2,2025,NA
+NA,Embry-Riddle (FL),/teams/596781,919,Sunshine State,2,2025,NA
+NA,Fla. Southern,/teams/596886,919,Sunshine State,2,2025,NA
+NA,Florida Tech,/teams/596885,919,Sunshine State,2,2025,NA
+NA,Lynn,/teams/596794,919,Sunshine State,2,2025,NA
+NA,Nova Southeastern,/teams/596797,919,Sunshine State,2,2025,NA
+NA,Palm Beach Atl.,/teams/596801,919,Sunshine State,2,2025,NA
+NA,Rollins,/teams/596928,919,Sunshine State,2,2025,NA
+NA,Saint Leo,/teams/596932,919,Sunshine State,2,2025,NA
+NA,Tampa,/teams/596939,919,Sunshine State,2,2025,NA
+NA,Alfred St.,/teams/597205,30022,AMCC,3,2025,NA
+NA,Hilbert,/teams/597147,30022,AMCC,3,2025,NA
+NA,La Roche,/teams/597118,30022,AMCC,3,2025,NA
+NA,Mount Aloysius,/teams/597184,30022,AMCC,3,2025,NA
+NA,Penn St.-Altoona,/teams/597177,30022,AMCC,3,2025,NA
+NA,Penn St.-Behrend,/teams/597000,30022,AMCC,3,2025,NA
+NA,Pitt.-Bradford,/teams/597130,30022,AMCC,3,2025,NA
+NA,Pitt.-Greensburg,/teams/597161,30022,AMCC,3,2025,NA
+NA,East Tex. Baptist,/teams/597105,14825,ASC,3,2025,NA
+NA,Hardin-Simmons,/teams/597293,14825,ASC,3,2025,NA
+NA,Howard Payne,/teams/597143,14825,ASC,3,2025,NA
+NA,LeTourneau,/teams/597150,14825,ASC,3,2025,NA
+NA,Mary Hardin-Baylor,/teams/597124,14825,ASC,3,2025,NA
+NA,Buena Vista,/teams/597234,864,American Rivers,3,2025,NA
+NA,Central (IA),/teams/597247,864,American Rivers,3,2025,NA
+NA,Coe,/teams/597255,864,American Rivers,3,2025,NA
+NA,Dubuque,/teams/597268,864,American Rivers,3,2025,NA
+NA,Loras,/teams/597318,864,American Rivers,3,2025,NA
+NA,Luther,/teams/597319,864,American Rivers,3,2025,NA
+NA,Neb. Wesleyan,/teams/596978,864,American Rivers,3,2025,NA
+NA,Simpson,/teams/597035,864,American Rivers,3,2025,NA
+NA,Wartburg,/teams/597059,864,American Rivers,3,2025,NA
+NA,Centenary (NJ),/teams/597163,30233,Atlantic East,3,2025,NA
+NA,Gwynedd Mercy,/teams/597162,30233,Atlantic East,3,2025,NA
+NA,Immaculata,/teams/597302,30233,Atlantic East,3,2025,NA
+NA,Marymount (VA),/teams/597326,30233,Atlantic East,3,2025,NA
+NA,Marywood,/teams/597328,30233,Atlantic East,3,2025,NA
+NA,Neumann,/teams/597126,30233,Atlantic East,3,2025,NA
+NA,Chris. Newport,/teams/597251,15810,C2C,3,2025,NA
+NA,Mary Washington,/teams/597325,15810,C2C,3,2025,NA
+NA,Salisbury,/teams/597031,15810,C2C,3,2025,NA
+NA,Augustana (IL),/teams/597218,836,CCIW,3,2025,NA
+NA,Carroll (WI),/teams/597241,836,CCIW,3,2025,NA
+NA,Carthage,/teams/597242,836,CCIW,3,2025,NA
+NA,Elmhurst,/teams/597273,836,CCIW,3,2025,NA
+NA,Ill. Wesleyan,/teams/597301,836,CCIW,3,2025,NA
+NA,Millikin,/teams/597335,836,CCIW,3,2025,NA
+NA,North Central (IL),/teams/596987,836,CCIW,3,2025,NA
+NA,North Park,/teams/596988,836,CCIW,3,2025,NA
+NA,Wheaton (IL),/teams/597072,836,CCIW,3,2025,NA
+NA,Asbury,/teams/597349,30251,CCS,3,2025,NA
+NA,Belhaven,/teams/597339,30251,CCS,3,2025,NA
+NA,Covenant,/teams/597199,30251,CCS,3,2025,NA
+NA,Huntingdon,/teams/597114,30251,CCS,3,2025,NA
+NA,LaGrange,/teams/597117,30251,CCS,3,2025,NA
+NA,Maryville (TN),/teams/597327,30251,CCS,3,2025,NA
+NA,Piedmont,/teams/597168,30251,CCS,3,2025,NA
+NA,Curry,/teams/597262,839,CNE,3,2025,NA
+NA,Endicott,/teams/597157,839,CNE,3,2025,NA
+NA,Gordon,/teams/597109,839,CNE,3,2025,NA
+NA,Hartford,/teams/596977,839,CNE,3,2025,NA
+NA,Nichols,/teams/596984,839,CNE,3,2025,NA
+NA,Roger Williams,/teams/597017,839,CNE,3,2025,NA
+NA,Suffolk,/teams/597043,839,CNE,3,2025,NA
+NA,Wentworth,/teams/597066,839,CNE,3,2025,NA
+NA,Western New Eng.,/teams/597070,839,CNE,3,2025,NA
+NA,Baruch,/teams/597225,834,CUNYAC,3,2025,NA
+NA,CCNY,/teams/596983,834,CUNYAC,3,2025,NA
+NA,John Jay,/teams/597306,834,CUNYAC,3,2025,NA
+NA,Lehman,/teams/597296,834,CUNYAC,3,2025,NA
+NA,Dickinson,/teams/597266,9683,Centennial,3,2025,NA
+NA,Franklin & Marshall,/teams/597282,9683,Centennial,3,2025,NA
+NA,Gettysburg,/teams/597284,9683,Centennial,3,2025,NA
+NA,Haverford,/teams/597294,9683,Centennial,3,2025,NA
+NA,Johns Hopkins,/teams/597307,9683,Centennial,3,2025,NA
+NA,McDaniel,/teams/597069,9683,Centennial,3,2025,NA
+NA,Muhlenberg,/teams/597356,9683,Centennial,3,2025,NA
+NA,Swarthmore,/teams/597045,9683,Centennial,3,2025,NA
+NA,Ursinus,/teams/597054,9683,Centennial,3,2025,NA
+NA,Washington Col.,/teams/597062,9683,Centennial,3,2025,NA
+NA,Maranatha Baptist,/teams/597122,99020,DIII Independent,3,2025,NA
+NA,Alfred,/teams/597360,863,Empire 8,3,2025,NA
+NA,Elmira,/teams/597274,863,Empire 8,3,2025,NA
+NA,Houghton,/teams/597201,863,Empire 8,3,2025,NA
+NA,Keuka,/teams/597116,863,Empire 8,3,2025,NA
+NA,Russell Sage,/teams/597348,863,Empire 8,3,2025,NA
+NA,SUNY Brockport,/teams/597233,863,Empire 8,3,2025,NA
+NA,SUNY Poly,/teams/597158,863,Empire 8,3,2025,NA
+NA,St. John Fisher,/teams/597021,863,Empire 8,3,2025,NA
+NA,Utica,/teams/597055,863,Empire 8,3,2025,NA
+NA,Albertus Magnus,/teams/597146,23257,Great Northeast,3,2025,NA
+NA,Anna Maria,/teams/597216,23257,Great Northeast,3,2025,NA
+NA,Colby-Sawyer,/teams/597257,23257,Great Northeast,3,2025,NA
+NA,Dean,/teams/597340,23257,Great Northeast,3,2025,NA
+NA,Elms,/teams/596999,23257,Great Northeast,3,2025,NA
+NA,JWU (Providence),/teams/597171,23257,Great Northeast,3,2025,NA
+NA,Lasell,/teams/597149,23257,Great Northeast,3,2025,NA
+NA,Mitchell,/teams/597189,23257,Great Northeast,3,2025,NA
+NA,New England Col.,/teams/596979,23257,Great Northeast,3,2025,NA
+NA,Norwich,/teams/596989,23257,Great Northeast,3,2025,NA
+NA,Rivier,/teams/597166,23257,Great Northeast,3,2025,NA
+NA,Saint Joseph (CT),/teams/597362,23257,Great Northeast,3,2025,NA
+NA,St. Joseph's (ME),/teams/597023,23257,Great Northeast,3,2025,NA
+NA,Anderson (IN),/teams/597095,9174,HCAC,3,2025,NA
+NA,Berea,/teams/597206,9174,HCAC,3,2025,NA
+NA,Bluffton,/teams/597101,9174,HCAC,3,2025,NA
+NA,Earlham,/teams/597269,9174,HCAC,3,2025,NA
+NA,Franklin,/teams/597141,9174,HCAC,3,2025,NA
+NA,Hanover,/teams/597112,9174,HCAC,3,2025,NA
+NA,Manchester,/teams/597121,9174,HCAC,3,2025,NA
+NA,Mt. St. Joseph,/teams/597152,9174,HCAC,3,2025,NA
+NA,Rose-Hulman,/teams/597018,9174,HCAC,3,2025,NA
+NA,Transylvania,/teams/597180,9174,HCAC,3,2025,NA
+NA,Catholic,/teams/597245,30101,Landmark,3,2025,NA
+NA,Drew,/teams/597267,30101,Landmark,3,2025,NA
+NA,Elizabethtown,/teams/597272,30101,Landmark,3,2025,NA
+NA,Juniata,/teams/597308,30101,Landmark,3,2025,NA
+NA,Lycoming,/teams/597359,30101,Landmark,3,2025,NA
+NA,Moravian,/teams/597353,30101,Landmark,3,2025,NA
+NA,Scranton,/teams/597033,30101,Landmark,3,2025,NA
+NA,Susquehanna,/teams/597044,30101,Landmark,3,2025,NA
+NA,Wilkes,/teams/597077,30101,Landmark,3,2025,NA
+NA,Bard,/teams/597098,24197,Liberty League,3,2025,NA
+NA,Clarkson,/teams/597254,24197,Liberty League,3,2025,NA
+NA,Hobart,/teams/597358,24197,Liberty League,3,2025,NA
+NA,Ithaca,/teams/597303,24197,Liberty League,3,2025,NA
+NA,RIT,/teams/597014,24197,Liberty League,3,2025,NA
+NA,Rensselaer,/teams/597009,24197,Liberty League,3,2025,NA
+NA,Rochester (NY),/teams/597015,24197,Liberty League,3,2025,NA
+NA,Skidmore,/teams/597036,24197,Liberty League,3,2025,NA
+NA,St. Lawrence,/teams/597024,24197,Liberty League,3,2025,NA
+NA,Union (NY),/teams/597053,24197,Liberty League,3,2025,NA
+NA,Vassar,/teams/597056,24197,Liberty League,3,2025,NA
+NA,Eastern Conn. St.,/teams/597270,867,Little East,3,2025,NA
+NA,Keene St.,/teams/597311,867,Little East,3,2025,NA
+NA,Plymouth St.,/teams/597002,867,Little East,3,2025,NA
+NA,Rhode Island Col.,/teams/597010,867,Little East,3,2025,NA
+NA,Southern Me.,/teams/597039,867,Little East,3,2025,NA
+NA,UMass Boston,/teams/597331,867,Little East,3,2025,NA
+NA,UMass Dartmouth,/teams/597038,867,Little East,3,2025,NA
+NA,VTSU Castleton,/teams/597244,867,Little East,3,2025,NA
+NA,WestConn,/teams/597068,867,Little East,3,2025,NA
+NA,Albright,/teams/597211,28744,MAC Commonwealth,3,2025,NA
+NA,Alvernia,/teams/597094,28744,MAC Commonwealth,3,2025,NA
+NA,Eastern,/teams/597156,28744,MAC Commonwealth,3,2025,NA
+NA,Hood,/teams/597148,28744,MAC Commonwealth,3,2025,NA
+NA,Messiah,/teams/597332,28744,MAC Commonwealth,3,2025,NA
+NA,Stevenson,/teams/597169,28744,MAC Commonwealth,3,2025,NA
+NA,Widener,/teams/597076,28744,MAC Commonwealth,3,2025,NA
+NA,York (PA),/teams/597093,28744,MAC Commonwealth,3,2025,NA
+NA,Arcadia,/teams/597099,28745,MAC Freedom,3,2025,NA
+NA,DeSales,/teams/597213,28745,MAC Freedom,3,2025,NA
+NA,Delaware Valley,/teams/597264,28745,MAC Freedom,3,2025,NA
+NA,FDU-Florham,/teams/597278,28745,MAC Freedom,3,2025,NA
+NA,King's (PA),/teams/597313,28745,MAC Freedom,3,2025,NA
+NA,Lebanon Valley,/teams/597317,28745,MAC Freedom,3,2025,NA
+NA,Misericordia,/teams/597164,28745,MAC Freedom,3,2025,NA
+NA,Stevens,/teams/597041,28745,MAC Freedom,3,2025,NA
+NA,Bridgewater St.,/teams/597232,870,MASCAC,3,2025,NA
+NA,Fitchburg St.,/teams/597280,870,MASCAC,3,2025,NA
+NA,Framingham St.,/teams/597281,870,MASCAC,3,2025,NA
+NA,MCLA,/teams/596985,870,MASCAC,3,2025,NA
+NA,Mass. Maritime,/teams/597330,870,MASCAC,3,2025,NA
+NA,Salem St.,/teams/597030,870,MASCAC,3,2025,NA
+NA,Westfield St.,/teams/597071,870,MASCAC,3,2025,NA
+NA,Worcester St.,/teams/597091,870,MASCAC,3,2025,NA
+NA,Augsburg,/teams/597217,882,MIAC,3,2025,NA
+NA,Bethel (MN),/teams/597227,882,MIAC,3,2025,NA
+NA,Carleton,/teams/597240,882,MIAC,3,2025,NA
+NA,Concordia-M'head,/teams/597259,882,MIAC,3,2025,NA
+NA,Gustavus Adolphus,/teams/597289,882,MIAC,3,2025,NA
+NA,Hamline,/teams/597291,882,MIAC,3,2025,NA
+NA,Macalester,/teams/597321,882,MIAC,3,2025,NA
+NA,Saint John's (MN),/teams/597022,882,MIAC,3,2025,NA
+NA,Saint Mary's (MN),/teams/597026,882,MIAC,3,2025,NA
+NA,St. Olaf,/teams/597028,882,MIAC,3,2025,NA
+NA,St. Scholastica,/teams/597029,882,MIAC,3,2025,NA
+NA,Beloit,/teams/597224,23119,MWC,3,2025,NA
+NA,Cornell College,/teams/597260,23119,MWC,3,2025,NA
+NA,Grinnell,/teams/597287,23119,MWC,3,2025,NA
+NA,Illinois Col.,/teams/597300,23119,MWC,3,2025,NA
+NA,Knox,/teams/597314,23119,MWC,3,2025,NA
+NA,Lawrence,/teams/597316,23119,MWC,3,2025,NA
+NA,Monmouth (IL),/teams/597337,23119,MWC,3,2025,NA
+NA,Ripon,/teams/597012,23119,MWC,3,2025,NA
+NA,Adrian,/teams/597209,873,Michigan Intercol. Ath. Assn.,3,2025,NA
+NA,Albion,/teams/597210,873,Michigan Intercol. Ath. Assn.,3,2025,NA
+NA,Alma,/teams/597214,873,Michigan Intercol. Ath. Assn.,3,2025,NA
+NA,Calvin,/teams/597238,873,Michigan Intercol. Ath. Assn.,3,2025,NA
+NA,Hope,/teams/597298,873,Michigan Intercol. Ath. Assn.,3,2025,NA
+NA,Kalamazoo,/teams/597309,873,Michigan Intercol. Ath. Assn.,3,2025,NA
+NA,Olivet,/teams/596995,873,Michigan Intercol. Ath. Assn.,3,2025,NA
+NA,Trine,/teams/597185,873,Michigan Intercol. Ath. Assn.,3,2025,NA
+NA,Aurora,/teams/597219,30097,NACC,3,2025,NA
+NA,Benedictine (IL),/teams/597299,30097,NACC,3,2025,NA
+NA,Concordia Chicago,/teams/597258,30097,NACC,3,2025,NA
+NA,Concordia Wisconsin,/teams/597102,30097,NACC,3,2025,NA
+NA,Dominican (IL),/teams/597131,30097,NACC,3,2025,NA
+NA,Edgewood,/teams/597107,30097,NACC,3,2025,NA
+NA,IIT,/teams/597207,30097,NACC,3,2025,NA
+NA,Lakeland,/teams/597119,30097,NACC,3,2025,NA
+NA,MSOE,/teams/597167,30097,NACC,3,2025,NA
+NA,Marian (WI),/teams/597123,30097,NACC,3,2025,NA
+NA,Rockford,/teams/597016,30097,NACC,3,2025,NA
+NA,St. Norbert,/teams/597027,30097,NACC,3,2025,NA
+NA,Wis. Lutheran,/teams/597155,30097,NACC,3,2025,NA
+NA,DePauw,/teams/597263,897,NCAC,3,2025,NA
+NA,Denison,/teams/597265,897,NCAC,3,2025,NA
+NA,Hiram,/teams/597297,897,NCAC,3,2025,NA
+NA,Kenyon,/teams/597312,897,NCAC,3,2025,NA
+NA,Oberlin,/teams/596990,897,NCAC,3,2025,NA
+NA,Ohio Wesleyan,/teams/596993,897,NCAC,3,2025,NA
+NA,Wabash,/teams/597058,897,NCAC,3,2025,NA
+NA,Wittenberg,/teams/597088,897,NCAC,3,2025,NA
+NA,Wooster,/teams/597089,897,NCAC,3,2025,NA
+NA,Amherst,/teams/597215,12817,NESCAC,3,2025,NA
+NA,Bates,/teams/597223,12817,NESCAC,3,2025,NA
+NA,Bowdoin,/teams/597229,12817,NESCAC,3,2025,NA
+NA,Colby,/teams/597256,12817,NESCAC,3,2025,NA
+NA,Hamilton,/teams/597290,12817,NESCAC,3,2025,NA
+NA,Middlebury,/teams/597334,12817,NESCAC,3,2025,NA
+NA,Trinity (CT),/teams/597048,12817,NESCAC,3,2025,NA
+NA,Tufts,/teams/597050,12817,NESCAC,3,2025,NA
+NA,Wesleyan (CT),/teams/597067,12817,NESCAC,3,2025,NA
+NA,Williams,/teams/597080,12817,NESCAC,3,2025,NA
+NA,Babson,/teams/597221,890,NEWMAC,3,2025,NA
+NA,Clark (MA),/teams/597253,890,NEWMAC,3,2025,NA
+NA,Coast Guard,/teams/597051,890,NEWMAC,3,2025,NA
+NA,Emerson,/teams/597275,890,NEWMAC,3,2025,NA
+NA,MIT,/teams/597329,890,NEWMAC,3,2025,NA
+NA,Salve Regina,/teams/597032,890,NEWMAC,3,2025,NA
+NA,Springfield,/teams/597040,890,NEWMAC,3,2025,NA
+NA,WPI,/teams/597090,890,NEWMAC,3,2025,NA
+NA,Wheaton (MA),/teams/597073,890,NEWMAC,3,2025,NA
+NA,Kean,/teams/597310,891,NJAC,3,2025,NA
+NA,Montclair St.,/teams/597338,891,NJAC,3,2025,NA
+NA,New Jersey City,/teams/597304,891,NJAC,3,2025,NA
+NA,Ramapo,/teams/597006,891,NJAC,3,2025,NA
+NA,Rowan,/teams/597285,891,NJAC,3,2025,NA
+NA,Rutgers-Camden,/teams/597019,891,NJAC,3,2025,NA
+NA,Rutgers-Newark,/teams/597020,891,NJAC,3,2025,NA
+NA,Stockton,/teams/597042,891,NJAC,3,2025,NA
+NA,TCNJ,/teams/597047,891,NJAC,3,2025,NA
+NA,Wm. Paterson,/teams/597079,891,NJAC,3,2025,NA
+NA,George Fox,/teams/597108,25300,NWC,3,2025,NA
+NA,Lewis & Clark,/teams/597170,25300,NWC,3,2025,NA
+NA,Linfield,/teams/597120,25300,NWC,3,2025,NA
+NA,Pacific (OR),/teams/597144,25300,NWC,3,2025,NA
+NA,Pacific Lutheran,/teams/597128,25300,NWC,3,2025,NA
+NA,Puget Sound,/teams/597005,25300,NWC,3,2025,NA
+NA,Whitman,/teams/597074,25300,NWC,3,2025,NA
+NA,Whitworth,/teams/597138,25300,NWC,3,2025,NA
+NA,Willamette,/teams/597078,25300,NWC,3,2025,NA
+NA,Husson,/teams/597115,30026,North Atlantic,3,2025,NA
+NA,Lesley,/teams/597175,30026,North Atlantic,3,2025,NA
+NA,Me.-Farmington,/teams/597322,30026,North Atlantic,3,2025,NA
+NA,Me.-Presque Isle,/teams/597188,30026,North Atlantic,3,2025,NA
+NA,SUNY Cobleskill ,/teams/597196,30026,North Atlantic,3,2025,NA
+NA,Thomas (ME),/teams/597145,30026,North Atlantic,3,2025,NA
+NA,VTSU Lyndon,/teams/597193,30026,North Atlantic,3,2025,NA
+NA,Baldwin Wallace,/teams/597222,901,OAC,3,2025,NA
+NA,Capital,/teams/597239,901,OAC,3,2025,NA
+NA,Heidelberg,/teams/597295,901,OAC,3,2025,NA
+NA,John Carroll,/teams/597305,901,OAC,3,2025,NA
+NA,Marietta,/teams/597324,901,OAC,3,2025,NA
+NA,Mount Union,/teams/597355,901,OAC,3,2025,NA
+NA,Muskingum,/teams/597357,901,OAC,3,2025,NA
+NA,Ohio Northern,/teams/596992,901,OAC,3,2025,NA
+NA,Otterbein,/teams/596998,901,OAC,3,2025,NA
+NA,Wilmington (OH),/teams/597139,901,OAC,3,2025,NA
+NA,Averett,/teams/597220,903,ODAC,3,2025,NA
+NA,Bridgewater (VA),/teams/597231,903,ODAC,3,2025,NA
+NA,East. Mennonite,/teams/597271,903,ODAC,3,2025,NA
+NA,Ferrum,/teams/597279,903,ODAC,3,2025,NA
+NA,Guilford,/teams/597111,903,ODAC,3,2025,NA
+NA,Hampden-Sydney,/teams/597292,903,ODAC,3,2025,NA
+NA,Lynchburg,/teams/597320,903,ODAC,3,2025,NA
+NA,Randolph-Macon,/teams/597007,903,ODAC,3,2025,NA
+NA,Roanoke,/teams/597013,903,ODAC,3,2025,NA
+NA,Shenandoah,/teams/597034,903,ODAC,3,2025,NA
+NA,Va. Wesleyan,/teams/597057,903,ODAC,3,2025,NA
+NA,Wash. & Lee,/teams/597061,903,ODAC,3,2025,NA
+NA,Allegheny,/teams/597212,907,PAC,3,2025,NA
+NA,Bethany (WV),/teams/597226,907,PAC,3,2025,NA
+NA,Chatham,/teams/597159,907,PAC,3,2025,NA
+NA,Franciscan,/teams/597350,907,PAC,3,2025,NA
+NA,Geneva,/teams/597197,907,PAC,3,2025,NA
+NA,Grove City,/teams/597288,907,PAC,3,2025,NA
+NA,Saint Vincent,/teams/597192,907,PAC,3,2025,NA
+NA,Thiel,/teams/597046,907,PAC,3,2025,NA
+NA,Wash. & Jeff.,/teams/597060,907,PAC,3,2025,NA
+NA,Waynesburg,/teams/597135,907,PAC,3,2025,NA
+NA,Westminster (PA),/teams/597137,907,PAC,3,2025,NA
+NA,Berry,/teams/597100,30169,SAA,3,2025,NA
+NA,Centre,/teams/597248,30169,SAA,3,2025,NA
+NA,Hendrix,/teams/597113,30169,SAA,3,2025,NA
+NA,Millsaps,/teams/597336,30169,SAA,3,2025,NA
+NA,Oglethorpe,/teams/597142,30169,SAA,3,2025,NA
+NA,Rhodes,/teams/597011,30169,SAA,3,2025,NA
+NA,Sewanee,/teams/597037,30169,SAA,3,2025,NA
+NA,Austin,/teams/597096,835,SCAC,3,2025,NA
+NA,Centenary (LA),/teams/597246,835,SCAC,3,2025,NA
+NA,Concordia (TX),/teams/597176,835,SCAC,3,2025,NA
+NA,Dallas,/teams/597103,835,SCAC,3,2025,NA
+NA,McMurry,/teams/597151,835,SCAC,3,2025,NA
+NA,Ozarks (AR),/teams/597172,835,SCAC,3,2025,NA
+NA,Schreiner,/teams/597133,835,SCAC,3,2025,NA
+NA,Southwestern (TX),/teams/597154,835,SCAC,3,2025,NA
+NA,St. Thomas (TX),/teams/597345,835,SCAC,3,2025,NA
+NA,Texas Lutheran,/teams/597134,835,SCAC,3,2025,NA
+NA,Trinity (TX),/teams/597049,835,SCAC,3,2025,NA
+NA,Cal Lutheran,/teams/597237,910,SCIAC,3,2025,NA
+NA,Caltech,/teams/597236,910,SCIAC,3,2025,NA
+NA,Chapman,/teams/597249,910,SCIAC,3,2025,NA
+NA,Claremont-M-S,/teams/597252,910,SCIAC,3,2025,NA
+NA,La Verne,/teams/597315,910,SCIAC,3,2025,NA
+NA,Occidental,/teams/596991,910,SCIAC,3,2025,NA
+NA,Pomona-Pitzer,/teams/597003,910,SCIAC,3,2025,NA
+NA,Redlands,/teams/597008,910,SCIAC,3,2025,NA
+NA,Whittier,/teams/597075,910,SCIAC,3,2025,NA
+NA,Blackburn,/teams/597228,12974,SLIAC,3,2025,NA
+NA,Eureka,/teams/597277,12974,SLIAC,3,2025,NA
+NA,Fontbonne,/teams/597160,12974,SLIAC,3,2025,NA
+NA,Greenville,/teams/597110,12974,SLIAC,3,2025,NA
+NA,Lyon,/teams/597361,12974,SLIAC,3,2025,NA
+NA,MUW,/teams/597344,12974,SLIAC,3,2025,NA
+NA,Principia,/teams/597004,12974,SLIAC,3,2025,NA
+NA,Spalding,/teams/597174,12974,SLIAC,3,2025,NA
+NA,Webster,/teams/597064,12974,SLIAC,3,2025,NA
+NA,Westminster (MO),/teams/597136,12974,SLIAC,3,2025,NA
+NA,Cortland,/teams/597261,917,SUNYAC,3,2025,NA
+NA,Fredonia,/teams/597283,917,SUNYAC,3,2025,NA
+NA,Oswego St.,/teams/596997,917,SUNYAC,3,2025,NA
+NA,Plattsburgh St.,/teams/597001,917,SUNYAC,3,2025,NA
+NA,SUNY Canton,/teams/597203,917,SUNYAC,3,2025,NA
+NA,SUNY New Paltz,/teams/596980,917,SUNYAC,3,2025,NA
+NA,SUNY Oneonta,/teams/596996,917,SUNYAC,3,2025,NA
+NA,Farmingdale St.,/teams/597178,13054,Skyline,3,2025,NA
+NA,Manhattanville,/teams/597323,13054,Skyline,3,2025,NA
+NA,Merchant Marine,/teams/597052,13054,Skyline,3,2025,NA
+NA,Mt. St. Mary (NY),/teams/597140,13054,Skyline,3,2025,NA
+NA,Old Westbury,/teams/596994,13054,Skyline,3,2025,NA
+NA,Purchase,/teams/597181,13054,Skyline,3,2025,NA
+NA,SUNY Maritime,/teams/596981,13054,Skyline,3,2025,NA
+NA,St. Joseph's (Brkln),/teams/597194,13054,Skyline,3,2025,NA
+NA,St. Joseph's (L.I.),/teams/597132,13054,Skyline,3,2025,NA
+NA,UMSV,/teams/597354,13054,Skyline,3,2025,NA
+NA,Yeshiva,/teams/597092,13054,Skyline,3,2025,NA
+NA,Brandeis,/teams/597230,1471,UAA,3,2025,NA
+NA,CWRU,/teams/597243,1471,UAA,3,2025,NA
+NA,Emory,/teams/597276,1471,UAA,3,2025,NA
+NA,NYU,/teams/596982,1471,UAA,3,2025,NA
+NA,UChicago,/teams/597250,1471,UAA,3,2025,NA
+NA,WashU,/teams/597063,1471,UAA,3,2025,NA
+NA,Bethany Lutheran,/teams/597186,30115,UMAC,3,2025,NA
+NA,Crown (MN),/teams/597183,30115,UMAC,3,2025,NA
+NA,Martin Luther,/teams/597153,30115,UMAC,3,2025,NA
+NA,Minn.-Morris,/teams/597125,30115,UMAC,3,2025,NA
+NA,North Central (MN),/teams/597187,30115,UMAC,3,2025,NA
+NA,Northland,/teams/597127,30115,UMAC,3,2025,NA
+NA,Northwestern-St. Paul,/teams/597182,30115,UMAC,3,2025,NA
+NA,Wis.-Superior,/teams/597086,30115,UMAC,3,2025,NA
+NA,Brevard,/teams/597352,842,USA South,3,2025,NA
+NA,Greensboro,/teams/597286,842,USA South,3,2025,NA
+NA,Mary Baldwin,/teams/597346,842,USA South,3,2025,NA
+NA,Methodist,/teams/597333,842,USA South,3,2025,NA
+NA,N.C. Wesleyan,/teams/596986,842,USA South,3,2025,NA
+NA,Pfeiffer,/teams/597351,842,USA South,3,2025,NA
+NA,Southern Va.,/teams/597202,842,USA South,3,2025,NA
+NA,William Peace,/teams/597165,842,USA South,3,2025,NA
+NA,Cairn,/teams/597129,30071,United East,3,2025,NA
+NA,Keystone,/teams/597191,30071,United East,3,2025,NA
+NA,Lancaster Bible,/teams/597198,30071,United East,3,2025,NA
+NA,Notre Dame (MD),/teams/601097,30071,United East,3,2025,NA
+NA,Penn College,/teams/597208,30071,United East,3,2025,NA
+NA,Penn St. Brandywine,/teams/597547,30071,United East,3,2025,NA
+NA,Penn St. Harrisburg,/teams/597195,30071,United East,3,2025,NA
+NA,Penn St.-Abington,/teams/597200,30071,United East,3,2025,NA
+NA,Penn St.-Berks,/teams/597190,30071,United East,3,2025,NA
+NA,Rosemont,/teams/597347,30071,United East,3,2025,NA
+NA,Saint Elizabeth,/teams/597342,30071,United East,3,2025,NA
+NA,St. Mary's (MD),/teams/597025,30071,United East,3,2025,NA
+NA,Valley Forge,/teams/597204,30071,United East,3,2025,NA
+NA,Wilson,/teams/597341,30071,United East,3,2025,NA
+NA,UW-River Falls,/teams/601221,1473,WIAC,3,2025,NA
+NA,Wis.-Eau Claire,/teams/597343,1473,WIAC,3,2025,NA
+NA,Wis.-La Crosse,/teams/597081,1473,WIAC,3,2025,NA
+NA,Wis.-Oshkosh,/teams/597082,1473,WIAC,3,2025,NA
+NA,Wis.-Platteville,/teams/597083,1473,WIAC,3,2025,NA
+NA,Wis.-Stevens Point,/teams/597084,1473,WIAC,3,2025,NA
+NA,Wis.-Stout,/teams/597085,1473,WIAC,3,2025,NA
+NA,Wis.-Whitewater,/teams/597087,1473,WIAC,3,2025,NA
