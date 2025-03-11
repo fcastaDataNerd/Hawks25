@@ -1,0 +1,72 @@
+---
+title: "Scrape"
+author: "Franco C"
+date: "2025-03-10"
+output: html_document
+---
+
+```{r}
+library(rvest)
+library(tidyverse)
+
+team_urls=c("https://www.baseball-reference.com/register/team.cgi?id=809cb865", "https://www.baseball-reference.com/register/team.cgi?id=98a58904", 
+"https://www.baseball-reference.com/register/team.cgi?id=3c4df3e4", 
+"https://www.baseball-reference.com/register/team.cgi?id=16e22885", 
+"https://www.baseball-reference.com/register/team.cgi?id=8f70d759", 
+"https://www.baseball-reference.com/register/team.cgi?id=efa4d9be",
+"https://www.baseball-reference.com/register/team.cgi?id=83fae3ee",
+"https://www.baseball-reference.com/register/team.cgi?id=db8e3c08",
+"https://www.baseball-reference.com/register/team.cgi?id=0758b612", 
+"https://www.baseball-reference.com/register/team.cgi?id=f5c6dcb2",
+"https://www.baseball-reference.com/register/team.cgi?id=9f75a8ee",
+"https://www.baseball-reference.com/register/team.cgi?id=bb30defe",
+"https://www.baseball-reference.com/register/team.cgi?id=4458bb59",
+"https://www.baseball-reference.com/register/team.cgi?id=c3c84957",
+"https://www.baseball-reference.com/register/team.cgi?id=739a6301",
+"https://www.baseball-reference.com/register/team.cgi?id=84a30f14",
+"https://www.baseball-reference.com/register/team.cgi?id=d21047ce",
+"https://www.baseball-reference.com/register/team.cgi?id=053aeddd",
+"https://www.baseball-reference.com/register/team.cgi?id=4f9e4350",
+"https://www.baseball-reference.com/register/team.cgi?id=88a2888f",
+"https://www.baseball-reference.com/register/team.cgi?id=80ca35ca",
+"https://www.baseball-reference.com/register/team.cgi?id=82a87bac",
+"https://www.baseball-reference.com/register/team.cgi?id=e3949acc",
+"https://www.baseball-reference.com/register/team.cgi?id=38fd8778",
+"https://www.baseball-reference.com/register/team.cgi?id=11453d72",
+"https://www.baseball-reference.com/register/team.cgi?id=152b121e"
+)
+
+# Create an empty dataframe to store all hitter data
+all_hitters=data.frame()
+
+# Loop through each team URL
+for(i in seq_along(team_urls)) {
+    
+    url=team_urls[i]
+    page=read_html(url)
+    tables=page %>%
+        html_nodes("table") %>%
+        html_table(fill = TRUE)
+  
+    if(length(tables)>=2) {
+      
+        hitters=tables[[2]]
+        hitters=hitters %>% filter(!is.na(Rk))
+        hitters$Team=str_extract(url, "(?<=id=)[a-zA-Z0-9]+")
+        hitters$Year=ifelse(i %% 2 == 1, 2023, 2022)
+        hitters=hitters %>% select(-Age)
+        all_hitters=bind_rows(all_hitters, hitters)
+    }
+}
+
+all_hitters$Name=str_remove_all(all_hitters$Name, "[*#]$")
+
+
+```
+
+```{r}
+write.csv(all_hitters, "C:/Users/franc/Documents/all_hitters.csv", row.names = FALSE)
+
+```
+
+
