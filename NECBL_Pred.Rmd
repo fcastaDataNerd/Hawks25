@@ -1,0 +1,129 @@
+---
+title: "NECBL_Pred"
+author: "Franco C"
+date: "2025-03-13"
+output: html_document
+---
+
+```{r}
+library(readr)
+library(dplyr)
+library(randomForest)
+library(caret)
+library(ggplot2)
+
+# Load Data
+necbl_hitters <- read_csv("C:\\Users\\franc\\OneDrive\\Hawks25\\all_hitters.csv")
+all_bat1 <- read_csv("C:\\Users\\franc\\Downloads\\allbat11.csv")
+
+# Create player-year identifier
+necbl_hitters <- necbl_hitters %>%
+  mutate(nameyear = paste(Name, Year))
+
+all_bat1 <- all_bat1 %>%
+  mutate(nameyear = paste(Name, year))
+
+# Step 1: Remove duplicate player-year entries (keeping first occurrence)
+necbl_hitters <- necbl_hitters %>%
+  group_by(nameyear) %>%
+  summarise(across(everything(), first), .groups = "drop")  
+
+all_bat1 <- all_bat1 %>%
+  group_by(nameyear) %>%
+  summarise(across(everything(), first), .groups = "drop")  
+
+# Step 2: Perform the left join safely
+comb_bat <- left_join(necbl_hitters, all_bat1, by = "nameyear")
+
+comb_bat <- comb_bat %>%
+  rename(NECBL_OPS = OPS)  # Rename OPS to NECBL_OPS
+
+
+# Step 3: Ensure no missing values in the target variable
+comb_bat <- comb_bat %>%
+  filter(!is.na(NECBL_OPS))
+
+# Step 4: Define real_conf______ (Ensure conference data is structured correctly)
+comb_bat <- comb_bat %>%
+  mutate(real_conf______ = ifelse(division == 1, conference, division))
+```
+```{r}
+comb_bat <- comb_bat %>%
+  select(-ends_with(".x")) %>%   # Remove unnecessary .x columns
+  rename_with(~ gsub(".y", "", .), ends_with(".y"))  # Remove .y suffix
+
+comb_bat <- comb_bat %>%
+  select(-GDP, -Notes, -year, -player_id, -player_url, -last_name, -first_name, Name, -Yr, -Pos, -Jersey, -DP, -CS, -Picked, -SB, -RBI2out, -team_name, -team_id, -conference_id, -conference, -division, -Name)
+
+comb_bat <- comb_bat %>%
+  mutate(across(c(GP, GS, BA, OBPct, SlgPct, R, AB, H, `2B`, `3B`, TB, HR, RBI, BB, HBP, SF, SH, K), 
+                ~ ifelse(is.na(.), 0, .)))
+
+```
+
+
+
+```{r}
+# Define the formula
+comb_bat <- comb_bat %>%
+  filter(PA >= 50 & AB>=50)
+
+formula <- NECBL_OPS ~ as.factor(real_conf______) +OBPct + SlgPct + AB
+
+# Set up 5-fold cross-validation
+train_control <- trainControl(method = "cv", number = 5)
+
+# Corrected grid (ONLY `mtry`)
+tune_grid <- expand.grid(
+  mtry = c(2, 4, 6, 8)  # Number of variables randomly sampled at each split
+)
+
+# Train Random Forest model (set ntree separately)
+rf_model <- train(
+  formula,
+  data = na.omit(comb_bat),  # Removes only NA rows for training
+  method = "rf",
+  trControl = train_control,
+  tuneGrid = tune_grid,
+  ntree = 500,  # Set number of trees separately
+  importance = TRUE
+)
+
+# Print best model results
+print(rf_model)
+
+
+```
+```{r}
+DumbModel=lm(NECBL_OPS~ AB+OBPct+SlgPct, data=comb_bat)
+summary(DumbModel)
+```
+
+
+```{r}
+library(ggplot2)
+
+# Get Variable Importance
+importance_values <- varImp(rf_model, scale = TRUE)
+
+# Convert to Data Frame
+importance_df <- data.frame(Feature = rownames(importance_values$importance), 
+                            Importance = importance_values$importance[,1])
+
+# Select Top 15 Features
+top_features <- importance_df %>%
+  arrange(desc(Importance)) %>%
+  slice(1:15)
+
+# Plot Feature Importance (Top 15)
+ggplot(top_features, aes(x = reorder(Feature, Importance), y = Importance)) +
+  geom_bar(stat = "identity", fill = "blue", color = "black", alpha = 0.7) +
+  coord_flip() +
+  labs(title = "Top 15 Important Features - Random Forest", 
+       x = "Features", 
+       y = "Importance Score") +
+  theme_minimal()
+
+
+```
+
