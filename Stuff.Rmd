@@ -12,7 +12,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(readxl)
 hist=read_excel("C:\\Users\\franc\\OneDrive\\Hawks25\\NECBLHISTORY_combined.xlsx")
-View(hist)
 ```
 
 
@@ -35,22 +34,23 @@ hist <- hist %>%
 
 hist <- hist %>%
   mutate(
-    PitchCall = recode(PitchCall, 
-      "StikeCalled" = "StrikeCalled",
-      "Strikecalled" = "StrikeCalled",
-      "BallinDirt" = "BallCalled",
-      "FoulBallNotFieldable" = "Foul",
-      "FoulBall" = "Foul",
-      "FoulBallFieldable" = "Foul"
+    PitchCall = case_when(
+      PitchCall %in% c("StikeCalled", "Strikecalled") ~ "StrikeCalled",
+      PitchCall == "BallinDirt" ~ "BallCalled",
+      PitchCall %in% c("FoulBall", "FoulBallNotFieldable", "FoulBallFieldable") ~ "Foul",
+      TRUE ~ PitchCall
     ),
-    BatterSide = recode(BatterSide, "RIght" = "Right"),
-    PitcherThrows=recode(PitcherThrows, "RIght" = "Right"),
+    BatterSide = ifelse(BatterSide == "RIght", "Right", BatterSide),
+    PitcherThrows = ifelse(PitcherThrows == "RIght", "Right", PitcherThrows)
+  ) %>%
+  mutate(
     Balls = factor(Balls, levels = c(0,1,2,3), ordered = TRUE),
     Strikes = factor(Strikes, levels = c(0,1,2), ordered = TRUE),
-    PitchCall=factor(PitchCall),
-    PitcherThrows=factor(PitcherThrows, levels=c("Left", "Right")),
-    BatterSide=factor(BatterSide, levels=c("Left", "Right"))
+    PitchCall = factor(PitchCall),
+    PitcherThrows = factor(PitcherThrows, levels = c("Left", "Right")),
+    BatterSide = factor(BatterSide, levels = c("Left", "Right"))
   )
+
 ```
 
 
@@ -153,5 +153,36 @@ print(single_prediction)
 
 
 ```
+```{r}
+
+```
+
+```{r}
+# Ensure we bring Pitcher from vali (which comes from hist)
+preds <- preds %>%
+  mutate(Pitcher = vali$Pitcher)
+
+```
+
+```{r}
+preds <- preds %>%
+  mutate(ActualGainStrike = ifelse(Strikes %in% c(0,1) & Actual %in% c("StrikeCalled", "Foul", "StrikeSwinging"), 1,
+                            ifelse(Strikes == 2 & Actual %in% c("StrikeCalled", "StrikeSwinging"), 1, 0)))
+
+
+
+```
+
+```{r}
+preds <- preds %>%
+  mutate(
+    GainStrike = ifelse(Strikes %in% c(0, 1), Foul + StrikeCalled + StrikeSwinging, StrikeCalled + StrikeSwinging),
+    ActualGainStrike = ifelse(Strikes %in% c(0, 1) & Actual %in% c("StrikeCalled", "Foul", "StrikeSwinging"), 1,
+                       ifelse(Strikes == 2 & Actual %in% c("StrikeCalled", "StrikeSwinging"), 1, 0))
+  )
+
+```
+
+
 
 
