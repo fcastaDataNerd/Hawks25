@@ -12,11 +12,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(readxl)
 history=read_excel("C:\\Users\\franc\\OneDrive\\Hawks25\\NECBLHISTORY_combined.xlsx")
-View(history)
 ```
 
 ```{r}
 # Define the values to keep
+# for the 2025 dataset, the one key adjustment is to avoid dropping rows with an NA in ExitSpeed, Angle, or Direction. necessary for model building but cannot just eliminate actual plays that happened for 2025 otherwise we will underestimate everyone's woba. Fairest thing to do is probably say when one of those three values is missing, the xwoba value is equal to the woba value of whatever the play result was. 
 valid_playresults=c("Single", "Double", "Triple", "HomeRun", 
 "Out", "Error", "FieldersChoice", "Sacrifice")
 
@@ -25,7 +25,6 @@ xwoba=subset(history, PlayResult %in% valid_playresults)
 xwoba=subset(xwoba, !is.na(ExitSpeed) & !is.na(Angle) & !is.na(Direction))
 xwoba$PlayResult[xwoba$PlayResult %in% c("FieldersChoice", "Error", "Sacrifice")] <- "Out"
 xwoba$PlayResult = as.factor(xwoba$PlayResult)
-View(xwoba)
 
 ```
 
@@ -148,7 +147,7 @@ predicted_probabilities <- predicted_probabilities %>%
   )
 
 # Define MLB wOBA Weights
-woba_weights <- c("Out" = 0, "Single" = 1.29, "Double" = 1.68, "Triple" = 1.95, "HomeRun" = 2.34)
+woba_weights <- c("Out" = 0, "Single" = 0.878, "Double" = 1.242, "Triple" = 1.569, "HomeRun" = 2.015)
 
 # Compute wOBA & xwOBA for Validation Set
 predicted_probabilities <- predicted_probabilities %>%
@@ -180,6 +179,8 @@ expected_woba <- mean(predicted_probabilities$xwOBA, na.rm = TRUE)
 # Print results
 cat("Average Actual wOBA:", actual_woba, "\n")
 cat("Average Expected wOBA (xwOBA):", expected_woba, "\n")
+sum(predicted_probabilities$wOBA)
+sum(predicted_probabilities$xwOBA)
 
 
 ```
@@ -188,7 +189,220 @@ brier_score <- mean((validation_pred - model.matrix(~ Actual - 1, data = predict
 cat("Brier Score:", brier_score, "\n")
 log_loss <- -mean(log(validation_pred[cbind(1:nrow(validation_pred), validation_labels + 1)]))
 cat("Log Loss:", log_loss, "\n")
+```
+
+```{r}
+# Step 1: One-hot encode the true labels
+actual_matrix <- model.matrix(~ actual_classes - 1)
+
+# Step 2: Clean up column names to match predicted_probabilities
+colnames(actual_matrix) <- levels(actual_classes)
+
+# Step 3: Ensure predictions are in matrix form
+pred_matrix <- as.matrix(predicted_probabilities[, levels(actual_classes)])
+
+# Step 4: Compute Brier Score per class
+brier_per_class <- colMeans((pred_matrix - actual_matrix)^2)
+
+# Step 5: Round and print
+brier_per_class <- round(brier_per_class, 5)
+print(brier_per_class)
+
+
+```
+
+```{r}
+mean(predicted_probabilities$Triple[actual_classes == "Triple"])
+mean(predicted_probabilities$Double[actual_classes == "Double"])
+mean(predicted_probabilities$Single[actual_classes == "Single"])
+mean(predicted_probabilities$HomeRun[actual_classes == "HomeRun"])
+mean(predicted_probabilities$Out[actual_classes == "Out"])
+```
+
+
+
+
+
+
+
+
+```{r}
+library(dplyr)
+library(readxl)
+
+# Load the historical dataset
+history2024 <- read_excel("C:/Users/franc/OneDrive/Hawks25/NECBLHISTORY_combined.xlsx")
+
+# Define valid play results
+valid_playresults <- c("Single", "Double", "Triple", "HomeRun", "Out", "Error", "FieldersChoice", "Sacrifice")
+
+# Filter to 2024 only, remove August games, and only keep valid play results
+xwoba2024 <- history2024 %>%
+  filter(
+    substr(Date, 1, 4) == "2024",                          # Year = 2024
+    substr(Date, 6, 7) != "08",                            # Exclude August
+    PlayResult %in% valid_playresults                      # Valid play types
+  ) %>%
+  mutate(
+    PlayResult = case_when(
+      PlayResult %in% c("Error", "FieldersChoice", "Sacrifice") ~ "Out",
+      TRUE ~ PlayResult
+    ),
+    PlayResult = factor(PlayResult, levels = c("Out", "Single", "Double", "Triple", "HomeRun"))
+  )
+
+```
+
+```{r}
+library(xgboost)
+library(dplyr)
+
+# Define weights
+woba_weights <- c("Out" = 0, "Single" = 0.878, "Double" = 1.242, "Triple" = 1.569, "HomeRun" = 2.015)
+
+# Flag rows with complete model input
+xwoba2024 <- xwoba2024 %>%
+  mutate(use_model = !is.na(ExitSpeed) & !is.na(Angle) & !is.na(Direction))
+
+# Prepare matrix of inputs for prediction
+predict_matrix <- xwoba2024 %>%
+  filter(use_model) %>%
+  select(ExitSpeed, Angle, Direction) %>%
+  as.matrix()
+
+# Predict probabilities using XGBoost
+predicted_probs <- predict(xgb_model, predict_matrix)
+predicted_probs <- matrix(predicted_probs, ncol = 5, byrow = TRUE)
+colnames(predicted_probs) <- names(woba_weights)
+
+# Bind predictions into the main dataframe for rows where model is used
+model_preds_df <- as.data.frame(predicted_probs)
+
+# Now safely insert those predicted columns into xwoba2024
+# Create an index of rows with complete data
+model_row_indices <- which(xwoba2024$use_model)
+
+# Fill those columns into xwoba2024 at the correct positions
+xwoba2024[model_row_indices, names(woba_weights)] <- model_preds_df
+
+# Compute xwOBA for all rows
+xwoba2024 <- xwoba2024 %>%
+  mutate(
+    xwOBA = case_when(
+      use_model ~ Out * woba_weights["Out"] +
+                  Single * woba_weights["Single"] +
+                  Double * woba_weights["Double"] +
+                  Triple * woba_weights["Triple"] +
+                  HomeRun * woba_weights["HomeRun"],
+      TRUE ~ woba_weights[as.character(PlayResult)]
+    )
+  )
+
+```
+
+```{r}
+library(stringr)
+
+# Step 3.1: Normalize batter name to match format used in stats2024
+# We convert names to: "LASTNAME, F"
+xwoba2024 <- xwoba2024 %>%
+  mutate(
+    BatterFormatted = str_to_upper(sub("^(.*),\\s*(\\w).*", "\\1, \\2", Batter)),
+    BatterFormatted = str_replace_all(BatterFormatted, "[‘’'`]", ""),
+    BatterTeam = str_trim(BatterTeam)
+  )
+
+player_xwOBA2024 <- xwoba2024 %>%
+  group_by(BatterFormatted, BatterTeam) %>%
+  summarise(
+    total_BIP = n(),                         # Total balls in play
+    sum_xwOBA = sum(xwOBA, na.rm = TRUE),    # Total predicted xwOBA
+    xwOBA_per_BIP = sum_xwOBA / total_BIP,   # Average xwOBA per BIP
+    .groups = "drop"
+  )
+
+# Optional: quick check
+head(player_xwOBA2024)
+```
+
+```{r}
+library(readr)
+library(dplyr)
+library(stringr)
+
+# Load the scraped 2024 batting stats
+stats2024 <- read_csv("C:/Users/franc/OneDrive/Hawks25/necbl_combined_batting_stats.csv")
+
+stats2024 <- stats2024 %>%
+  mutate(
+    Player = str_to_upper(Player),
+    Player = str_trim(Player),
+    Player = str_replace(Player, "^X\\s+", ""),                    # Remove "X " prefix
+    Player = str_replace_all(Player, "[‘’'`]", ""),                # Remove apostrophes and curly quotes
+    Team = str_trim(Team),
+    `1B` = H - `2B` - `3B` - HR
+  ) %>%
+  filter(
+    AB > 0,
+    !grepl("TOTAL:", Player)                  # Use grepl here for reliability
+  )
+
+```
+```{r}
+merged2024 <- stats2024 %>%
+  left_join(player_xwOBA2024, by = c("Player" = "BatterFormatted", "Team" = "BatterTeam"))
+View(merged2024)
+```
+
+
+```{r}
+# Step 4.2: Merge with the aggregated xwOBA data
+merged2024 <- stats2024 %>%
+  left_join(player_xwOBA2024, by = c("Player" = "BatterFormatted", "Team" = "BatterTeam"))
+
+# Step 4.3: Filter to players with model-based BIP data
+merged2024 <- merged2024 %>%
+  filter(!is.na(sum_xwOBA))
+
+# Step 4.4: Define wOBA weights again
+wBB <- 0.690
+wHBP <- 0.722
+w1B <- 0.878
+w2B <- 1.242
+w3B <- 1.569
+wHR <- 2.015
+
+# Step 4.5: Compute traditional wOBA and model-based xwOBA
+merged2024 <- merged2024 %>%
+  mutate(
+    wOBA = ((wBB * BB) + (wHBP * HBP) + (w1B * `1B`) + (w2B * `2B`) + (w3B * `3B`) + (wHR * HR)) /
+           (AB + BB + SF + HBP),
+    
+    # Adjusted xwOBA using sum_xwOBA from model and BIP count
+    xwOBA = ((wBB * BB) + (wHBP * HBP) + sum_xwOBA) / (AB + BB + SF + HBP),  
+
+    diff = xwOBA - wOBA
+  )
+
+# Step 4.6: Optional quick summary
+View(merged2024)
 
 ```
 
 
+
+```{r}
+merged2024 <- merged2024 %>%
+  mutate(
+    PA = AB + BB + HBP + SF + SH, 
+    expected_BIP = PA - BB - HBP - SO,
+    sum_xwOBA_adjusted = xwOBA_per_BIP * expected_BIP,
+    xwOBA_adjusted = ((wBB * BB) + (wHBP * HBP) + sum_xwOBA_adjusted) / (AB + BB + SF + HBP),
+    diff_adjusted = xwOBA_adjusted - wOBA
+  )
+
+```
+
+comments: I'm not sure the python script I built picks up every game. The actual # of BIP from the master dataset in 2024 was not the same as the actual BIP for a batter on many occasions. Sometimes there is nothing that can be done because a dumb trackman operator will not start tracking when an inning starts and data is lost. Just need to be very careful about ensuring every 2025 game is correctly stored in one CSV.
+
+worst case scenario, say a player has actually hit 15 BIP but the master CSV only picks up 10. For those 10, we take the xwOBA per BIP and then multiply it by 15. That is only if a certain BIP is truly unrecoverable due to trackman idiots. 
