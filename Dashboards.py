@@ -3,12 +3,11 @@ from dash import html, dcc, Input, Output, dash_table
 import pandas as pd
 import plotly.express as px
 
-# Load datasets
 pitch_df = pd.read_csv(
-    "https://drive.google.com/uc?export=download&id=1LPYqxqRuIcUxHldalhwEtCaWl2zr1aHc",
-    low_memory=False,
-    on_bad_lines='skip'  # Skip malformed rows
+    "https://www.dropbox.com/scl/fi/o4gk329avhidbz87b0s9c/NECBL_2024_Pitches.csv?rlkey=51k5iaqdxclxq1z6ls7hy7qak&st=cfei9tmo&dl=1",
+    low_memory=False
 )
+
 batting_df = pd.read_csv("necbl_combined_batting_stats.csv", low_memory=False)
 
 # Initialize app
