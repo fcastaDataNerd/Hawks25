@@ -181,8 +181,6 @@ def update_batting_table(min_pa, team):
 
     return filtered.to_dict("records"), style_conditional
 
-if __name__ == '__main__':
-    app.run(debug=True)
 
 import os
 
