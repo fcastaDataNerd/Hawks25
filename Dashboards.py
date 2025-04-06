@@ -183,3 +183,10 @@ def update_batting_table(min_pa, team):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+import os
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port, debug=False)
+
