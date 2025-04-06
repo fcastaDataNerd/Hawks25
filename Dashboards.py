@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 
 # Load datasets
-pitch_df = pd.read_csv("NECBL_2024_Pitches.csv", low_memory=False)
+pitch_df = pd.read_csv("https://drive.google.com/uc?export=download&id=1LPYqxqRuIcUxHldalhwEtCaWl2zr1aHc", low_memory=False)
 batting_df = pd.read_csv("necbl_combined_batting_stats.csv", low_memory=False)
 
 # Initialize app
