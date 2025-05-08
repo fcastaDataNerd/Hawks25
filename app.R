@@ -3,7 +3,6 @@ library(tidyverse)
 library(DT)
 library(plotly)
 
-# Load datasets #remove NECBL2024EXP thing. I think that is where this is drawing the data from. Move everything into Hawks2025 folder
 pitch_df <- read_csv("NECBL_2024_Pitches.csv", show_col_types = FALSE)
 pitching_df <- read_csv("necbl_combined_pitching_stats.csv", show_col_types = FALSE)
 batting_df <- read_csv("necbl_combined_batting_stats.csv", show_col_types = FALSE)
@@ -96,8 +95,6 @@ server <- function(input, output) {
   })
   
   output$batting_table <- renderDT({
-    
-    # Continue as normal...
     df <- batting_df %>%
       filter(if (input$team != "All") Team == input$team else TRUE) %>%
       filter(PA >= input$minPA) %>%
@@ -107,25 +104,29 @@ server <- function(input, output) {
         OPS_Pctl = percent_rank(OPS) * 100,
         wOBA_Pctl = percent_rank(wOBA) * 100,
         xwOBA_Pctl = percent_rank(xwOBA_adjusted) * 100,
-        Diff_Pctl = percent_rank(diff_adjusted) * 100
+        Diff_Pctl = percent_rank(diff_adjusted) * 100,
+        xwOBA_per_BIP_Pctl = percent_rank(xwOBA_per_BIP) * 100
       ) %>%
-      mutate(across(c(wOBA, xwOBA_adjusted, diff_adjusted,
-                      OBP_Pctl, SLG_Pctl, OPS_Pctl, wOBA_Pctl, xwOBA_Pctl, Diff_Pctl),
+      mutate(across(c(wOBA, xwOBA_adjusted, diff_adjusted, xwOBA_per_BIP,
+                      OBP_Pctl, SLG_Pctl, OPS_Pctl, wOBA_Pctl, xwOBA_Pctl, Diff_Pctl, xwOBA_per_BIP_Pctl),
                     ~round(.x, 3)))
     
-    datatable(df %>% 
-                select(Player, Team, PA, wOBA, xwOBA_adjusted, diff_adjusted,
-                       wOBA_Pctl, xwOBA_Pctl, Diff_Pctl, OBP_Pctl, SLG_Pctl, OPS_Pctl),
+    datatable(df %>%
+                select(Player, Team, PA, wOBA, xwOBA_adjusted, diff_adjusted, xwOBA_per_BIP,
+                       wOBA_Pctl, xwOBA_Pctl, Diff_Pctl, xwOBA_per_BIP_Pctl,
+                       OBP_Pctl, SLG_Pctl, OPS_Pctl),
               options = list(pageLength = 25),
               rownames = FALSE) %>%
       formatStyle(
-        columns = c('wOBA_Pctl', 'xwOBA_Pctl', 'Diff_Pctl', 'OBP_Pctl', 'SLG_Pctl', 'OPS_Pctl'),
+        columns = c('wOBA_Pctl', 'xwOBA_Pctl', 'Diff_Pctl', 'xwOBA_per_BIP_Pctl',
+                    'OBP_Pctl', 'SLG_Pctl', 'OPS_Pctl'),
         background = styleColorBar(c(0, 100), 'lightblue'),
         backgroundSize = '90% 60%',
         backgroundRepeat = 'no-repeat',
         backgroundPosition = 'center'
       )
   })
+  
   
   output$pitching_percentiles_table <- renderDT({
     df <- pitching_df %>%
